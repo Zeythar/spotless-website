@@ -2,6 +2,7 @@
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import Footer from '$lib/components/shared/Footer.svelte';
+	import Header from '$lib/components/shared/Header.svelte';
 
 	let {children} = $props();
 </script>
@@ -13,5 +14,6 @@
 	/>
 </svelte:head>
 
+<Header />
 {@render children()}
 <Footer />
