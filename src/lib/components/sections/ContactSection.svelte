@@ -5,10 +5,21 @@
 	import CardTitle from '../ui/card/card-title.svelte';
 	import Card from '../ui/card/card.svelte';
 	import {Clock, Info, Mail, MapPin, Phone} from '@lucide/svelte';
-	import * as Form from '$lib/components/ui/form/index.js';
+	import {
+		FormControl,
+		FormDescription,
+		FormField,
+		FormFieldErrors,
+		FormLabel
+	} from '$lib/components/ui/form/index.js';
 	import {Input} from '$lib/components/ui/input/index.js';
 	import {Button} from '$lib/components/ui/button/index.js';
-	import * as Select from '$lib/components/ui/select/index.js';
+	import {
+		Select,
+		SelectContent,
+		SelectItem,
+		SelectTrigger
+	} from '$lib/components/ui/select/index.js';
 	import {Textarea} from '$lib/components/ui/textarea/index.js';
 	import {formSchema, type FormSchema} from '$lib/schema';
 	import {type SuperValidated, type Infer, superForm} from 'sveltekit-superforms';
@@ -133,14 +144,14 @@
 						class="grid grid-cols-1 gap-4 md:grid-cols-2"
 					>
 						{#each formFields as field}
-							<Form.Field
+							<FormField
 								{form}
 								name={field.name}
 								class={field.class}
 							>
-								<Form.Control>
+								<FormControl>
 									{#snippet children({props})}
-										<Form.Label>{field.label}</Form.Label>
+										<FormLabel>{field.label}</FormLabel>
 										{#if field.component === 'input'}
 											<Input
 												{...props}
@@ -154,35 +165,35 @@
 												placeholder={field.placeholder}
 											/>
 										{:else if field.component === 'select'}
-											<Select.Root
+											<Select
 												type="single"
 												bind:value={$formData[field.name]}
 												name={props.name}
 											>
-												<Select.Trigger
+												<SelectTrigger
 													{...props}
 													class="w-full cursor-pointer"
 												>
 													{$formData[field.name]
 														? $formData[field.name]
 														: field.placeholder || 'Välj en tjänst'}
-												</Select.Trigger>
-												<Select.Content>
+												</SelectTrigger>
+												<SelectContent>
 													{#each field.options || [] as option}
-														<Select.Item
+														<SelectItem
 															value={option.value}
 															class="cursor-pointer"
-															>{option.label}</Select.Item
+															>{option.label}</SelectItem
 														>
 													{/each}
-												</Select.Content>
-											</Select.Root>
+												</SelectContent>
+											</Select>
 										{/if}
 									{/snippet}
-								</Form.Control>
-								<Form.Description />
-								<Form.FieldErrors />
-							</Form.Field>
+								</FormControl>
+								<FormDescription />
+								<FormFieldErrors />
+							</FormField>
 						{/each}
 
 						<Button

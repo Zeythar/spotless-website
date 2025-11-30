@@ -3,6 +3,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import Footer from '$lib/components/shared/Footer.svelte';
 	import Header from '$lib/components/shared/Header.svelte';
+	import FloatingActions from '$lib/components/shared/FloatingActions.svelte';
 
 	let {children} = $props();
 </script>
@@ -17,3 +18,4 @@
 <Header />
 {@render children()}
 <Footer />
+<FloatingActions />

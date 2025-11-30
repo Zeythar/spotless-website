@@ -1,47 +1,45 @@
 <script lang="ts">
-	import * as NavigationMenu from '$lib/components/ui/navigation-menu/index.js';
+	import {
+		NavigationMenuContent,
+		NavigationMenuItem,
+		NavigationMenuLink,
+		NavigationMenuList,
+		NavigationMenuRoot,
+		NavigationMenuTrigger
+	} from '$lib/components/ui/navigation-menu/index.js';
 	import {navigationMenuTriggerStyle} from '$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte';
 	import {Building, House, Info, Settings, SprayCan} from '@lucide/svelte';
 	import {Button} from '../ui/button';
+	import Logo from './Logo.svelte';
 </script>
 
 <header class="sticky top-0 z-50 w-full border-b border-border bg-white/95 backdrop-blur-sm">
 	<div class="container mx-auto px-4 py-4">
 		<div class="flex items-center justify-between">
-			<!-- Logo -->
-			<button class="flex items-center gap-3">
-				<div
-					class="flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br from-[#1a9bce] to-[#61c9b7]"
-				>
-					<span class="text-white">SN</span>
-				</div>
-				<div>
-					<h4 class="text-[#1a9bce]">Spotless Norrland</h4>
-				</div>
-			</button>
+			<Logo />
 
 			<!-- Desktop Navigation -->
 
-			<NavigationMenu.Root class="hidden items-center gap-6 md:flex">
-				<NavigationMenu.List class="gap-0">
-					<NavigationMenu.Item>
-						<NavigationMenu.Link>
+			<NavigationMenuRoot class="hidden items-center gap-6 md:flex">
+				<NavigationMenuList class="gap-0">
+					<NavigationMenuItem>
+						<NavigationMenuLink>
 							{#snippet child()}
 								<a
 									href="/"
 									class="font-semibold {navigationMenuTriggerStyle()}">Hem</a
 								>
 							{/snippet}
-						</NavigationMenu.Link>
-					</NavigationMenu.Item>
-					<NavigationMenu.Item>
-						<NavigationMenu.Trigger class="cursor-pointer font-semibold"
-							>Tjänster</NavigationMenu.Trigger
+						</NavigationMenuLink>
+					</NavigationMenuItem>
+					<NavigationMenuItem>
+						<NavigationMenuTrigger class="cursor-pointer font-semibold"
+							>Tjänster</NavigationMenuTrigger
 						>
-						<NavigationMenu.Content>
+						<NavigationMenuContent>
 							<ul class="grid w-[380px] gap-4 p-2">
 								<li>
-									<NavigationMenu.Link
+									<NavigationMenuLink
 										href="/tjanster/hem-och-privatstadning"
 										class="flex-row items-center gap-2"
 									>
@@ -56,9 +54,9 @@
 												För ett rent och trivsamt hem.
 											</div>
 										</div>
-									</NavigationMenu.Link>
+									</NavigationMenuLink>
 
-									<NavigationMenu.Link
+									<NavigationMenuLink
 										href="/tjanster/foretags-och-lokalstadning"
 										class="flex-row items-center gap-2"
 									>
@@ -73,9 +71,9 @@
 												Ren och professionell arbetsmiljö.
 											</div>
 										</div>
-									</NavigationMenu.Link>
+									</NavigationMenuLink>
 
-									<NavigationMenu.Link
+									<NavigationMenuLink
 										href="/tjanster/specialstadning-och-sanering"
 										class="flex-row items-center gap-2"
 									>
@@ -90,8 +88,8 @@
 												Flyttstäd, fönsterputs och specialuppdrag.
 											</div>
 										</div>
-									</NavigationMenu.Link>
-									<NavigationMenu.Link
+									</NavigationMenuLink>
+									<NavigationMenuLink
 										href="/tjanster/service-och-ovrigt"
 										class="flex-row items-center gap-2"
 									>
@@ -106,13 +104,13 @@
 												Flexibla lösningar och hushållsnära tjänster.
 											</div>
 										</div>
-									</NavigationMenu.Link>
+									</NavigationMenuLink>
 								</li>
 							</ul>
-						</NavigationMenu.Content>
-					</NavigationMenu.Item>
-					<NavigationMenu.Item>
-						<NavigationMenu.Link>
+						</NavigationMenuContent>
+					</NavigationMenuItem>
+					<NavigationMenuItem>
+						<NavigationMenuLink>
 							{#snippet child()}
 								<a
 									href="/varfor-oss"
@@ -120,20 +118,20 @@
 									>Varför oss</a
 								>
 							{/snippet}
-						</NavigationMenu.Link>
-					</NavigationMenu.Item>
-					<NavigationMenu.Item>
-						<NavigationMenu.Link>
+						</NavigationMenuLink>
+					</NavigationMenuItem>
+					<NavigationMenuItem>
+						<NavigationMenuLink>
 							{#snippet child()}
 								<a
 									href="/priser"
 									class="font-semibold {navigationMenuTriggerStyle()}">Priser</a
 								>
 							{/snippet}
-						</NavigationMenu.Link>
-					</NavigationMenu.Item>
-					<NavigationMenu.Item>
-						<NavigationMenu.Link>
+						</NavigationMenuLink>
+					</NavigationMenuItem>
+					<NavigationMenuItem>
+						<NavigationMenuLink>
 							{#snippet child()}
 								<a
 									href="/stadguide"
@@ -141,11 +139,11 @@
 									>Städguide</a
 								>
 							{/snippet}
-						</NavigationMenu.Link>
-					</NavigationMenu.Item>
+						</NavigationMenuLink>
+					</NavigationMenuItem>
 
-					<NavigationMenu.Item>
-						<NavigationMenu.Link>
+					<NavigationMenuItem>
+						<NavigationMenuLink>
 							{#snippet child()}
 								<a
 									href="/fragor-och-svar"
@@ -153,14 +151,17 @@
 									>Frågor & Svar</a
 								>
 							{/snippet}
-						</NavigationMenu.Link>
-					</NavigationMenu.Item>
+						</NavigationMenuLink>
+					</NavigationMenuItem>
 
-					<NavigationMenu.Item>
-						<Button class="cursor-pointer font-semibold">Begär offert</Button>
-					</NavigationMenu.Item>
-				</NavigationMenu.List>
-			</NavigationMenu.Root>
+					<NavigationMenuItem>
+						<Button
+							class="ml-20 cursor-pointer bg-linear-to-r from-[#1a9bce] to-[#61c9b7] text-white transition-opacity hover:opacity-90"
+							>Begär offert</Button
+						>
+					</NavigationMenuItem>
+				</NavigationMenuList>
+			</NavigationMenuRoot>
 		</div>
 	</div>
 </header>

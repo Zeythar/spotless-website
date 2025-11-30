@@ -1,7 +1,6 @@
 <script lang="ts">
 	import ContactSection from '$lib/components/sections/ContactSection.svelte';
-	import AboutSection from '$lib/pages/home/AboutSection.svelte';
-	import HeroSection from '$lib/pages/home/HeroSection.svelte';
+	import CleaningGuideSection from '$lib/pages/cleaning-guide/CleaningGuideSection.svelte';
 	import type {FormSchema} from '$lib/schema';
 	import type {SuperValidated, Infer} from 'sveltekit-superforms';
 
@@ -9,13 +8,12 @@
 </script>
 
 <svelte:head>
-	<title>Spotless - Din partner inom städ och service</title>
+	<title>Spotless - Städguide</title>
 	<meta
 		name="description"
 		content="This is where the description goes for SEO"
 	/>
 </svelte:head>
 
-<HeroSection />
-<AboutSection />
+<CleaningGuideSection />
 <ContactSection data={data.form} />

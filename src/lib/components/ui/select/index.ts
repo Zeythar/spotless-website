@@ -1,4 +1,5 @@
-import {Select as SelectPrimitive} from 'bits-ui';
+import * as Bits from 'bits-ui';
+const SelectPrimitive = Bits.Select;
 
 import Group from './select-group.svelte';
 import Label from './select-label.svelte';

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import {Facebook, Instagram, Linkedin} from '@lucide/svelte';
+	import Logo from './Logo.svelte';
 </script>
 
 <footer class="bg-foreground py-12 text-background">
@@ -7,13 +8,8 @@
 		<div class="mb-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
 			<!-- Company Info -->
 			<div class="lg:col-span-2">
-				<div class="mb-4 flex items-center gap-3">
-					<div
-						class="flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br from-[#1a9bce] to-[#61c9b7]"
-					>
-						<span class="text-white">SN</span>
-					</div>
-					<h4 class="text-background">Spotless Norrland</h4>
+				<div class="mb-4">
+					<Logo white={true} />
 				</div>
 				<p class="text-sm text-background/70">
 					Professionell städning för hem och företag sedan 2025
