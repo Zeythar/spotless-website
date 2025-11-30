@@ -460,3 +460,29 @@ export const serviceCategories = {
 		]
 	}
 };
+
+export const servicePageData = {
+	hero: {
+		buttonText: 'Begär offert'
+	},
+	sections: {
+		services: {
+			title: (categoryTitle: string) => `Våra tjänster inom ${categoryTitle}`
+		},
+		benefits: {
+			title: 'Fördelar med våra tjänster'
+		},
+		process: {
+			title: 'Så går det till'
+		},
+		faq: {
+			title: 'Vanliga frågor'
+		},
+		cta: {
+			title: 'Redo att komma igång?',
+			description:
+				'Kontakta oss idag för en kostnadsfri offert och upplev skillnaden med professionell städning',
+			buttonText: 'Begär offert nu'
+		}
+	}
+};

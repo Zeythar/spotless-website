@@ -8,6 +8,7 @@
 	} from '$lib/components/ui/card/';
 	import {Button} from '$lib/components/ui/button/';
 	import {CheckCircle2, ArrowLeft} from '@lucide/svelte';
+	import {servicePageData} from '$lib/data/services';
 
 	interface ServiceDetailProps {
 		category: {
@@ -41,7 +42,7 @@
 				<p class="mb-8 text-lg text-muted-foreground">
 					{category.description}
 				</p>
-				<Button size="lg">Begär offert</Button>
+				<Button size="lg">{servicePageData.hero.buttonText}</Button>
 			</div>
 		</div>
 	</section>
@@ -60,7 +61,9 @@
 	<!-- Services Grid -->
 	<section class="bg-muted/30 py-16">
 		<div class="container mx-auto px-4">
-			<h2 class="mb-8 text-center text-3xl">Våra tjänster inom {category.title}</h2>
+			<h2 class="mb-8 text-center text-3xl">
+				{servicePageData.sections.services.title(category.title)}
+			</h2>
 			<div class="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
 				{#each category.services as service, index (service.name)}
 					<Card>
@@ -90,7 +93,9 @@
 	<section class="py-16">
 		<div class="container mx-auto px-4">
 			<div class="mx-auto max-w-4xl">
-				<h2 class="mb-8 text-center text-3xl">Fördelar med våra tjänster</h2>
+				<h2 class="mb-8 text-center text-3xl">
+					{servicePageData.sections.benefits.title}
+				</h2>
 				<div class="grid gap-6 sm:grid-cols-2">
 					{#each category.benefits as benefit, index (index)}
 						<div class="flex items-start gap-3">
@@ -111,7 +116,9 @@
 	<section class="bg-muted/30 py-16">
 		<div class="container mx-auto px-4">
 			<div class="mx-auto max-w-4xl">
-				<h2 class="mb-8 text-center text-3xl">Så går det till</h2>
+				<h2 class="mb-8 text-center text-3xl">
+					{servicePageData.sections.process.title}
+				</h2>
 				<div class="space-y-6">
 					{#each category.process as step, index (index)}
 						<div class="flex gap-4">
@@ -134,7 +141,9 @@
 	<section class="py-16">
 		<div class="container mx-auto px-4">
 			<div class="mx-auto max-w-4xl">
-				<h2 class="mb-8 text-center text-3xl">Vanliga frågor</h2>
+				<h2 class="mb-8 text-center text-3xl">
+					{servicePageData.sections.faq.title}
+				</h2>
 				<div class="space-y-4">
 					{#each category.faq as item, index (item.question)}
 						<Card>
@@ -154,17 +163,18 @@
 	<!-- CTA Section -->
 	<section class="bg-linear-to-br from-[#1a9bce] to-[#61c9b7] py-16 text-white">
 		<div class="container mx-auto px-4 text-center">
-			<h2 class="mb-4 text-3xl text-white">Redo att komma igång?</h2>
+			<h2 class="mb-4 text-3xl text-white">
+				{servicePageData.sections.cta.title}
+			</h2>
 			<p class="mx-auto mb-8 max-w-2xl text-lg text-white/90">
-				Kontakta oss idag för en kostnadsfri offert och upplev skillnaden med professionell
-				städning
+				{servicePageData.sections.cta.description}
 			</p>
 			<Button
 				size="lg"
 				variant="secondary"
 				class="bg-white text-[#1a9bce] hover:bg-white/90"
 			>
-				Begär offert nu
+				{servicePageData.sections.cta.buttonText}
 			</Button>
 		</div>
 	</section>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import {logoData} from '$lib/data/logo';
 	let {white = false} = $props();
 </script>
 
@@ -8,8 +9,8 @@
 	class="flex items-center gap-3"
 >
 	<img
-		src={white ? '/images/prototyp-1-white.png' : '/images/prototyp-1.png'}
-		alt="Spotless Norrland Logo"
+		src={white ? logoData.images.white : logoData.images.default}
+		alt={logoData.alt}
 		class="h-12"
 	/>
 </a>

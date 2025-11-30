@@ -1,5 +1,6 @@
 <script lang="ts">
 	import {Button} from '$lib/components/ui/button';
+	import {heroData} from '$lib/data/home';
 </script>
 
 <section
@@ -11,25 +12,23 @@
 			<!-- Content -->
 			<div class="space-y-6">
 				<h1 class="text-4xl font-medium lg:text-5xl xl:text-6xl">
-					Professionell städning för hem och företag
+					{heroData.title}
 				</h1>
 				<p class="max-w-xl text-lg text-muted-foreground">
-					Släpp städstressen och låt Spotless göra jobbet. Vi erbjuder allt från
-					regelbunden hem- och kontorsstädning till avancerad sanering, utfört med
-					proffsig precision och pålitlighet.
+					{heroData.description}
 				</p>
 				<div class="flex flex-col gap-4 sm:flex-row">
 					<Button
 						size="lg"
 						class="bg-linear-to-r from-[#1a9bce] to-[#61c9b7] text-white transition-opacity hover:opacity-90"
 					>
-						Begär offert
+						{heroData.buttons.primary}
 					</Button>
 					<Button
 						size="lg"
 						variant="outline"
 					>
-						Se våra tjänster
+						{heroData.buttons.secondary}
 					</Button>
 				</div>
 			</div>
@@ -38,8 +37,8 @@
 			<div class="relative">
 				<div class="aspect-4/3 overflow-hidden rounded-2xl shadow-2xl">
 					<img
-						src="/images/content/site-hero.jpg"
-						alt="Professionell städtjänst"
+						src={heroData.image.src}
+						alt={heroData.image.alt}
 						class="h-full w-full object-cover"
 					/>
 				</div>

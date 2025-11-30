@@ -1,18 +1,19 @@
 <script lang="ts">
 	import ContactSection from '$lib/components/sections/ContactSection.svelte';
-	import AboutSection from '$lib/pages/home/AboutSection.svelte';
-	import HeroSection from '$lib/pages/home/HeroSection.svelte';
+	import AboutSection from '$lib/components/sections/AboutSection.svelte';
+	import HeroSection from '$lib/components/sections/HeroSection.svelte';
 	import type {FormSchema} from '$lib/schema';
 	import type {SuperValidated, Infer} from 'sveltekit-superforms';
+	import {seoData} from '$lib/data/seo';
 
 	let {data}: {data: {form: SuperValidated<Infer<FormSchema>>}} = $props();
 </script>
 
 <svelte:head>
-	<title>Spotless - Din partner inom städ och service</title>
+	<title>{seoData.home.title}</title>
 	<meta
 		name="description"
-		content="This is where the description goes for SEO"
+		content={seoData.home.description}
 	/>
 </svelte:head>
 

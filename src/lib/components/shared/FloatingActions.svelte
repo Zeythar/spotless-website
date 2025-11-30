@@ -2,6 +2,7 @@
 	import {ArrowUp, Brush, Bubbles} from '@lucide/svelte';
 	import {Button} from '$lib/components/ui/button/index.js';
 	import {fade} from 'svelte/transition';
+	import {floatingActionsData} from '$lib/data/floating-actions';
 
 	let showScrollTop = $state(false);
 
@@ -24,7 +25,7 @@
 				size="icon"
 				class="h-12 w-12 cursor-pointer rounded-full border border-border bg-white text-primary shadow-lg hover:bg-white"
 				onclick={scrollToTop}
-				aria-label="Scroll to top"
+				aria-label={floatingActionsData.scrollToTop.label}
 			>
 				<ArrowUp class="h-6! w-6!" />
 			</Button>
@@ -33,7 +34,7 @@
 
 	<Button
 		class="group flex h-12 cursor-pointer items-center gap-0 rounded-full bg-linear-to-r from-[#1a9bce] to-[#61c9b7] px-0 text-white shadow-lg transition-all duration-300 hover:gap-2 hover:px-6"
-		aria-label="Contact us"
+		aria-label={floatingActionsData.contact.ariaLabel}
 	>
 		<div class="flex h-12 w-12 items-center justify-center">
 			<Bubbles class="h-6! w-6!" />
@@ -41,7 +42,7 @@
 		<span
 			class="max-w-0 overflow-hidden text-lg font-medium whitespace-nowrap opacity-0 transition-all duration-300 group-hover:max-w-[200px] group-hover:opacity-100"
 		>
-			Kontakta oss
+			{floatingActionsData.contact.label}
 		</span>
 	</Button>
 </div>

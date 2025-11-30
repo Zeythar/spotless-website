@@ -24,6 +24,7 @@
 	import {formSchema, type FormSchema} from '$lib/schema';
 	import {type SuperValidated, type Infer, superForm} from 'sveltekit-superforms';
 	import {zod4Client} from 'sveltekit-superforms/adapters';
+	import {contactData} from '$lib/data/contact';
 
 	let {data}: {data: SuperValidated<Infer<FormSchema>>} = $props();
 
@@ -32,6 +33,13 @@
 	});
 
 	const {form: formData, enhance} = form;
+
+	const iconMap = {
+		Phone,
+		Mail,
+		MapPin,
+		Clock
+	};
 
 	type FieldConfig = {
 		name: keyof Infer<FormSchema>;
@@ -43,35 +51,38 @@
 	};
 
 	const formFields: FieldConfig[] = [
-		{name: 'name', label: 'Namn', component: 'input', placeholder: 'Ditt namn'},
-		{name: 'email', label: 'E-post', component: 'input', placeholder: 'din@epost.se'},
-		{name: 'phone', label: 'Telefonnummer', component: 'input', placeholder: '070-123 45 67'},
+		{
+			name: 'name',
+			label: contactData.form.fields.name.label,
+			component: 'input',
+			placeholder: contactData.form.fields.name.placeholder
+		},
+		{
+			name: 'email',
+			label: contactData.form.fields.email.label,
+			component: 'input',
+			placeholder: contactData.form.fields.email.placeholder
+		},
+		{
+			name: 'phone',
+			label: contactData.form.fields.phone.label,
+			component: 'input',
+			placeholder: contactData.form.fields.phone.placeholder
+		},
 		{
 			name: 'service',
-			label: 'Tjänst',
+			label: contactData.form.fields.service.label,
 			component: 'select',
-			placeholder: 'Välj en tjänst',
-			options: [
-				{value: 'home', label: 'Hem- & Privatstädning'},
-				{value: 'business', label: 'Företags- & Lokalstädning'},
-				{value: 'special', label: 'Specialstädning & Sanering'},
-				{value: 'service', label: 'Service & Övrigt'}
-			]
+			placeholder: contactData.form.fields.service.placeholder,
+			options: contactData.form.fields.service.options
 		},
 		{
 			name: 'message',
-			label: 'Meddelande',
+			label: contactData.form.fields.message.label,
 			component: 'textarea',
 			class: 'md:col-span-2',
-			placeholder: 'Beskriv ditt ärende...'
+			placeholder: contactData.form.fields.message.placeholder
 		}
-	];
-
-	const contactDetails = [
-		{icon: Phone, title: 'Telefon', value: '0735-686 467'},
-		{icon: Mail, title: 'E-post', value: 'kontakt@spotlessnorrland.se'},
-		{icon: MapPin, title: 'Adress', value: 'Midälvavägen 20, Sundsvall'},
-		{icon: Clock, title: 'Öppettider', value: 'Mån-Fre: 08:00-17:00'}
 	];
 </script>
 
@@ -81,9 +92,9 @@
 >
 	<div class="container mx-auto px-4">
 		<div class="mb-12 text-center">
-			<h2 class="mb-4 text-3xl font-medium lg:text-4xl">Kontakta oss</h2>
+			<h2 class="mb-4 text-3xl font-medium lg:text-4xl">{contactData.title}</h2>
 			<p class="mx-auto max-w-2xl text-lg text-muted-foreground">
-				Begär en kostnadsfri offert eller kontakta oss för mer information
+				{contactData.description}
 			</p>
 		</div>
 
@@ -91,17 +102,18 @@
 			<div class="space-y-6">
 				<Card>
 					<CardHeader>
-						<CardTitle>Kontaktinformation</CardTitle>
-						<CardDescription>Så når du oss</CardDescription>
+						<CardTitle>{contactData.contactInfo.title}</CardTitle>
+						<CardDescription>{contactData.contactInfo.description}</CardDescription>
 					</CardHeader>
 					<CardContent class="space-y-4">
 						<ul class="space-y-4">
-							{#each contactDetails as detail}
+							{#each contactData.contactInfo.details as detail}
+								{@const Icon = iconMap[detail.icon as keyof typeof iconMap]}
 								<li class="flex items-start gap-3">
 									<div
 										class="rounded-lg bg-linear-to-br from-[#1a9bce]/20 to-[#61c9b7]/20 p-2"
 									>
-										<detail.icon class="h-5 w-5 text-[#1a9bce]" />
+										<Icon class="h-5 w-5 text-[#1a9bce]" />
 									</div>
 									<div>
 										<h4 class="text-sm font-medium">{detail.title}</h4>
@@ -115,9 +127,9 @@
 
 				<Card class="border-0 bg-linear-to-br from-[#1a9bce] to-[#61c9b7] text-white">
 					<CardHeader>
-						<CardTitle class="text-white">Akut städbehov?</CardTitle>
+						<CardTitle class="text-white">{contactData.emergency.title}</CardTitle>
 						<CardDescription class="text-white/80">
-							Vi erbjuder akutstädning 24/7
+							{contactData.emergency.description}
 						</CardDescription>
 					</CardHeader>
 					<CardContent>
@@ -125,7 +137,7 @@
 							variant="secondary"
 							class="w-full bg-white text-[#1a9bce] hover:bg-white/90"
 						>
-							Ring nu: 0735-686 467
+							{contactData.emergency.buttonText}
 						</Button>
 					</CardContent>
 				</Card>
@@ -133,8 +145,8 @@
 
 			<Card class="md:col-span-1 lg:col-span-2">
 				<CardHeader>
-					<CardTitle>Begär offert</CardTitle>
-					<CardDescription>Fyll i formuläret så återkommer vi till dig</CardDescription>
+					<CardTitle>{contactData.form.title}</CardTitle>
+					<CardDescription>{contactData.form.description}</CardDescription>
 				</CardHeader>
 
 				<CardContent>
@@ -175,7 +187,11 @@
 													class="w-full cursor-pointer"
 												>
 													{$formData[field.name]
-														? $formData[field.name]
+														? field.options?.find(
+																(o) =>
+																	o.value ===
+																	$formData[field.name]
+															)?.label
 														: field.placeholder || 'Välj en tjänst'}
 												</SelectTrigger>
 												<SelectContent>
@@ -199,7 +215,7 @@
 						<Button
 							type="submit"
 							class="bg-linear-to-r from-[#1a9bce] to-[#61c9b7] text-white transition-opacity hover:opacity-90 md:col-span-2"
-							>Skicka</Button
+							>{contactData.form.submitButton}</Button
 						>
 					</form>
 				</CardContent>

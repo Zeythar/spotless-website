@@ -1,158 +1,111 @@
 <script lang="ts">
-	import {Facebook, Instagram, Linkedin} from '@lucide/svelte';
-	import Logo from './Logo.svelte';
+	import {Facebook, Instagram, Linkedin, Mail, MapPin, Phone} from '@lucide/svelte';
+	import {footerData} from '$lib/data/footer';
+
+	const currentYear = new Date().getFullYear();
+
+	const iconMap = {
+		Facebook,
+		Instagram,
+		Linkedin
+	};
 </script>
 
-<footer class="bg-foreground py-12 text-background">
-	<div class="container mx-auto px-4">
-		<div class="mb-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+<footer class="bg-foreground text-gray-300">
+	<div class="container mx-auto px-4 py-12">
+		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
 			<!-- Company Info -->
-			<div class="lg:col-span-2">
-				<div class="mb-4">
-					<Logo white={true} />
-				</div>
-				<p class="text-sm text-background/70">
-					Professionell städning för hem och företag sedan 2025
+			<div>
+				<h3 class="mb-4 text-xl font-bold text-white">Spotless Norrland</h3>
+				<p class="mb-4 text-sm leading-relaxed">
+					{footerData.companyInfo.description}
 				</p>
+				<div class="flex space-x-4">
+					{#each footerData.sections.contact.social as social}
+						{@const Icon = iconMap[social.icon as keyof typeof iconMap]}
+						<a
+							href={social.href}
+							class="text-neutral-400 transition-colors hover:text-white"
+						>
+							<span class="sr-only">{social.label}</span>
+							<Icon class="h-6 w-6" />
+						</a>
+					{/each}
+				</div>
 			</div>
 
 			<!-- Quick Links -->
 			<div>
-				<h4 class="mb-4 text-background">Sidor</h4>
-				<ul class="space-y-2 text-sm">
-					<li>
-						<a
-							href="/"
-							class="text-background/70 transition-colors hover:text-background"
-						>
-							Hem
-						</a>
-					</li>
-					<li>
-						<a
-							href="/varfor-oss"
-							class="text-background/70 transition-colors hover:text-background"
-						>
-							Varför oss
-						</a>
-					</li>
-					<li>
-						<a
-							href="/priser"
-							class="text-background/70 transition-colors hover:text-background"
-						>
-							Priser
-						</a>
-					</li>
-					<li>
-						<a
-							href="/stadguide"
-							class="text-background/70 transition-colors hover:text-background"
-						>
-							Städguide
-						</a>
-					</li>
-					<li>
-						<a
-							href="/fragor-och-svar"
-							class="text-background/70 transition-colors hover:text-background"
-						>
-							Frågor & Svar
-						</a>
-					</li>
+				<h3 class="mb-4 text-lg font-semibold text-white">
+					{footerData.sections.pages.title}
+				</h3>
+				<ul class="space-y-2">
+					{#each footerData.sections.pages.links as link}
+						<li>
+							<a
+								href={link.href}
+								class="text-sm transition-colors hover:text-white"
+							>
+								{link.label}
+							</a>
+						</li>
+					{/each}
 				</ul>
 			</div>
 
 			<!-- Services -->
 			<div>
-				<h4 class="mb-4 text-background">Våra tjänster</h4>
-				<ul class="space-y-2 text-sm text-background/70">
-					<li>
-						<a
-							href="/tjanster/hem-och-privatstadning"
-							class="text-background/70 transition-colors hover:text-background"
-						>
-							Hem- & Privatstädning
-						</a>
-					</li>
-					<li>
-						<a
-							href="/tjanster/foretags-och-lokalstadning"
-							class="text-background/70 transition-colors hover:text-background"
-						>
-							Företags- & Lokalstädning
-						</a>
-					</li>
-					<li>
-						<a
-							href="/tjanster/foretags-och-lokalstadning"
-							class="text-background/70 transition-colors hover:text-background"
-						>
-							Specialstädning & Sanering
-						</a>
-					</li>
-					<li>
-						<a
-							href="/tjanster/service-och-ovrigt"
-							class="text-background/70 transition-colors hover:text-background"
-						>
-							Service & Övrigt
-						</a>
-					</li>
+				<h3 class="mb-4 text-lg font-semibold text-white">
+					{footerData.sections.services.title}
+				</h3>
+				<ul class="space-y-2">
+					{#each footerData.sections.services.links as link}
+						<li>
+							<a
+								href={link.href}
+								class="text-sm transition-colors hover:text-white"
+							>
+								{link.label}
+							</a>
+						</li>
+					{/each}
 				</ul>
 			</div>
 
-			<!-- Contact -->
+			<!-- Contact Info -->
 			<div>
-				<h4 class="mb-4 text-background">Kontakt</h4>
-				<ul class="space-y-2 text-sm text-background/70">
-					<li>
+				<h3 class="mb-4 text-lg font-semibold text-white">
+					{footerData.sections.contact.title}
+				</h3>
+				<ul class="space-y-4">
+					<li class="flex items-start">
+						<Phone class="mt-1 mr-3 h-5 w-5 shrink-0 text-neutral-400" />
 						<a
-							href="tel:0735686467"
-							class="text-background/70 transition-colors hover:text-background"
-							>0735-686 467</a
+							href={footerData.sections.contact.phoneLink}
+							class="text-sm hover:text-white"
 						>
+							{footerData.sections.contact.phone}
+						</a>
 					</li>
-					<li>
+					<li class="flex items-start">
+						<Mail class="mt-1 mr-3 h-5 w-5 shrink-0 text-neutral-400" />
 						<a
-							href="mailto:info@spotlessnorrland.se"
-							class="text-background/70 transition-colors hover:text-background"
-							>info@spotlessnorrland.se</a
+							href={footerData.sections.contact.emailLink}
+							class="text-sm hover:text-white"
 						>
+							{footerData.sections.contact.email}
+						</a>
 					</li>
-					<li>Midälvavägen 20, Sundsvall</li>
-					<li>Mån-Fre 08:00-17:00</li>
+					<li class="flex items-start">
+						<MapPin class="mt-1 mr-3 h-5 w-5 shrink-0 text-neutral-400" />
+						<span class="text-sm">{footerData.sections.contact.address}</span>
+					</li>
 				</ul>
-				<div class="mt-4 flex gap-3">
-					<a
-						href="#facebook"
-						class="rounded-lg bg-background/10 p-2 transition-colors hover:bg-background/20"
-						aria-label="Facebook"
-					>
-						<Facebook class="h-5 w-5" />
-					</a>
-					<a
-						href="#instagram"
-						class="rounded-lg bg-background/10 p-2 transition-colors hover:bg-background/20"
-						aria-label="Instagram"
-					>
-						<Instagram class="h-5 w-5" />
-					</a>
-					<a
-						href="#linkedin"
-						class="rounded-lg bg-background/10 p-2 transition-colors hover:bg-background/20"
-						aria-label="LinkedIn"
-					>
-						<Linkedin class="h-5 w-5" />
-					</a>
-				</div>
 			</div>
 		</div>
 
-		<div class="border-t border-background/10 pt-8 text-center text-sm text-background/70">
-			<p>
-				&copy; {new Date().getFullYear()} Spotless Norrland. Alla rättigheter förbehållna.
-			</p>
+		<div class="mt-12 border-t border-neutral-800 pt-8 text-center text-sm">
+			<p>{@html footerData.copyright(currentYear)}</p>
 		</div>
 	</div>
 </footer>
