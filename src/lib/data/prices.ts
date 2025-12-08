@@ -1,4 +1,6 @@
-export const pricesData = {
+import type {PricesData} from '$lib/types';
+
+export const pricesData: PricesData = {
 	title: 'Priser & Paket',
 	description:
 		'Transparenta priser utan dolda kostnader. Alla offerter är kostnadsfria och förpliktelsefria',
@@ -6,7 +8,7 @@ export const pricesData = {
 		{
 			name: 'Hemstädning',
 			description: 'Perfekt för privatpersoner',
-			price: 'Från 350 kr/tim',
+			price: 'Offert efter behov',
 			popular: false,
 			features: [
 				'Regelbunden städning',
@@ -46,52 +48,6 @@ export const pricesData = {
 			]
 		}
 	],
-	additionalServices: {
-		title: 'Prisexempel på övriga tjänster',
-		disclaimer: 'Alla priser är inklusive moms. ROT-avdrag kan tillkomma för privatpersoner.',
-		items: [
-			{
-				service: 'Storstädning',
-				price: 'Från 450 kr/tim',
-				description: 'Omfattande städning inklusive skåp, vitvaror och fönster'
-			},
-			{
-				service: 'Flyttstädning',
-				price: 'Från 3500 kr',
-				description: 'ROT-certifierad flyttstädning med garanti, prisexempel för 2:a'
-			},
-			{
-				service: 'Fönsterputs',
-				price: 'Från 50 kr/fönster',
-				description: 'In- och utvändig putsning inklusive karmar'
-			},
-			{
-				service: 'Kontorsstädning',
-				price: 'Från 250 kr/tim',
-				description: 'Daglig eller regelbunden städning av kontorslokaler'
-			},
-			{
-				service: 'Golvvård',
-				price: 'Offert efter yta',
-				description: 'Kristallisering, slipning eller behandling av golv'
-			},
-			{
-				service: 'Gräsklippning',
-				price: 'Från 400 kr/tillfälle',
-				description: 'Säsongsbaserad gräsklippning och trädgårdsskötsel'
-			},
-			{
-				service: 'Fasadmålning',
-				price: 'Offert efter projekt',
-				description: 'Komplett fasadmålning inklusive förberedelser'
-			},
-			{
-				service: 'Handyman-tjänster',
-				price: 'Från 450 kr/tim',
-				description: 'Möbelmontering och enklare reparationer'
-			}
-		]
-	},
 	rotInfo: {
 		title: 'ROT-avdrag - Sänk din kostnad med 30%',
 		description:

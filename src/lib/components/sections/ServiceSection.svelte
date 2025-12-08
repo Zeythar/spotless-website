@@ -9,25 +9,11 @@
 	import {Button} from '$lib/components/ui/button/';
 	import {CheckCircle2, ArrowLeft} from '@lucide/svelte';
 	import {servicePageData} from '$lib/data/services';
+	import {contactState} from '$lib/state/contact.svelte';
+	import type {ServiceCategory} from '$lib/types';
 
 	interface ServiceDetailProps {
-		category: {
-			id: string;
-			title: string;
-			description: string;
-			longDescription: string;
-			services: Array<{
-				name: string;
-				description: string;
-				features: string[];
-			}>;
-			benefits: string[];
-			process: string[];
-			faq: Array<{
-				question: string;
-				answer: string;
-			}>;
-		};
+		category: ServiceCategory;
 	}
 
 	let {category}: ServiceDetailProps = $props();
@@ -35,14 +21,19 @@
 
 <div class="min-h-screen bg-background">
 	<!-- Hero Section -->
-	<section class="bg-linear-to-br from-[#1a9bce]/10 to-[#61c9b7]/10 py-20">
+	<section class="bg-linear-to-br from-brand-primary/10 to-brand-secondary/10 py-20">
 		<div class="container mx-auto px-4">
 			<div class="max-w-3xl">
-				<h1 class="mb-6 text-4xl lg:text-5xl">{category.title}</h1>
+				<h1 class="mb-6 text-4xl font-medium lg:text-5xl">{category.title}</h1>
 				<p class="mb-8 text-lg text-muted-foreground">
 					{category.description}
 				</p>
-				<Button size="lg">{servicePageData.hero.buttonText}</Button>
+				<Button
+					size="lg"
+					class="cursor-pointer bg-linear-to-r from-brand-primary to-brand-secondary text-white transition-opacity hover:opacity-90"
+					onclick={() => (contactState.isOpen = true)}
+					>{servicePageData.hero.buttonText}</Button
+				>
 			</div>
 		</div>
 	</section>
@@ -61,7 +52,7 @@
 	<!-- Services Grid -->
 	<section class="bg-muted/30 py-16">
 		<div class="container mx-auto px-4">
-			<h2 class="mb-8 text-center text-3xl">
+			<h2 class="mb-8 text-center text-3xl font-medium">
 				{servicePageData.sections.services.title(category.title)}
 			</h2>
 			<div class="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
@@ -76,7 +67,7 @@
 								{#each service.features as feature, idx (idx)}
 									<li class="flex items-start gap-2">
 										<CheckCircle2
-											class="mt-0.5 h-5 w-5 shrink-0 text-[#1a9bce]"
+											class="mt-0.5 h-5 w-5 shrink-0 text-brand-primary"
 										/>
 										<span class="text-sm">{feature}</span>
 									</li>
@@ -93,16 +84,16 @@
 	<section class="py-16">
 		<div class="container mx-auto px-4">
 			<div class="mx-auto max-w-4xl">
-				<h2 class="mb-8 text-center text-3xl">
+				<h2 class="mb-8 text-center text-3xl font-medium">
 					{servicePageData.sections.benefits.title}
 				</h2>
 				<div class="grid gap-6 sm:grid-cols-2">
-					{#each category.benefits as benefit, index (index)}
+					{#each category.benefits || [] as benefit, index (index)}
 						<div class="flex items-start gap-3">
 							<div
-								class="shrink-0 rounded-lg bg-linear-to-br from-[#1a9bce]/20 to-[#61c9b7]/20 p-2"
+								class="shrink-0 rounded-lg bg-linear-to-br from-brand-primary/20 to-brand-secondary/20 p-2"
 							>
-								<CheckCircle2 class="h-5 w-5 text-[#1a9bce]" />
+								<CheckCircle2 class="h-5 w-5 text-brand-primary" />
 							</div>
 							<p>{benefit}</p>
 						</div>
@@ -116,14 +107,14 @@
 	<section class="bg-muted/30 py-16">
 		<div class="container mx-auto px-4">
 			<div class="mx-auto max-w-4xl">
-				<h2 class="mb-8 text-center text-3xl">
+				<h2 class="mb-8 text-center text-3xl font-medium">
 					{servicePageData.sections.process.title}
 				</h2>
 				<div class="space-y-6">
-					{#each category.process as step, index (index)}
+					{#each category.process || [] as step, index (index)}
 						<div class="flex gap-4">
 							<div
-								class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-[#1a9bce] to-[#61c9b7] text-white"
+								class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-brand-primary to-brand-secondary text-white"
 							>
 								{index + 1}
 							</div>
@@ -141,11 +132,11 @@
 	<section class="py-16">
 		<div class="container mx-auto px-4">
 			<div class="mx-auto max-w-4xl">
-				<h2 class="mb-8 text-center text-3xl">
+				<h2 class="mb-8 text-center text-3xl font-medium">
 					{servicePageData.sections.faq.title}
 				</h2>
 				<div class="space-y-4">
-					{#each category.faq as item, index (item.question)}
+					{#each category.faq || [] as item, index (item.question)}
 						<Card>
 							<CardHeader>
 								<CardTitle class="text-lg">{item.question}</CardTitle>
@@ -161,9 +152,9 @@
 	</section>
 
 	<!-- CTA Section -->
-	<section class="bg-linear-to-br from-[#1a9bce] to-[#61c9b7] py-16 text-white">
+	<section class="bg-linear-to-br from-brand-primary to-brand-secondary py-16 text-white">
 		<div class="container mx-auto px-4 text-center">
-			<h2 class="mb-4 text-3xl text-white">
+			<h2 class="mb-4 text-3xl font-medium text-white">
 				{servicePageData.sections.cta.title}
 			</h2>
 			<p class="mx-auto mb-8 max-w-2xl text-lg text-white/90">
@@ -172,7 +163,8 @@
 			<Button
 				size="lg"
 				variant="secondary"
-				class="bg-white text-[#1a9bce] hover:bg-white/90"
+				class="cursor-pointer bg-white text-brand-primary hover:bg-white/90"
+				onclick={() => (contactState.isOpen = true)}
 			>
 				{servicePageData.sections.cta.buttonText}
 			</Button>

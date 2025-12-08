@@ -1,6 +1,7 @@
 <script lang="ts">
 	import {Facebook, Instagram, Linkedin, Mail, MapPin, Phone} from '@lucide/svelte';
 	import {footerData} from '$lib/data/footer';
+	import Logo from './Logo.svelte';
 
 	const currentYear = new Date().getFullYear();
 
@@ -13,14 +14,16 @@
 
 <footer class="bg-foreground text-gray-300">
 	<div class="container mx-auto px-4 py-12">
-		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
 			<!-- Company Info -->
 			<div>
-				<h3 class="mb-4 text-xl font-bold text-white">Spotless Norrland</h3>
+				<div class="mb-4">
+					<Logo white={true} />
+				</div>
 				<p class="mb-4 text-sm leading-relaxed">
 					{footerData.companyInfo.description}
 				</p>
-				<div class="flex space-x-4">
+				<!-- <div class="flex space-x-4">
 					{#each footerData.sections.contact.social as social}
 						{@const Icon = iconMap[social.icon as keyof typeof iconMap]}
 						<a
@@ -31,7 +34,7 @@
 							<Icon class="h-6 w-6" />
 						</a>
 					{/each}
-				</div>
+				</div> -->
 			</div>
 
 			<!-- Quick Links -->
@@ -78,14 +81,18 @@
 					{footerData.sections.contact.title}
 				</h3>
 				<ul class="space-y-4">
-					<li class="flex items-start">
-						<Phone class="mt-1 mr-3 h-5 w-5 shrink-0 text-neutral-400" />
-						<a
-							href={footerData.sections.contact.phoneLink}
-							class="text-sm hover:text-white"
-						>
-							{footerData.sections.contact.phone}
-						</a>
+					<li class="flex items-center">
+						<Phone class="mr-3 h-5 w-5 shrink-0 text-neutral-400" />
+						<div class="flex flex-col gap-1">
+							{#each footerData.sections.contact.phone.split(', ') as phone}
+								<a
+									href={`tel:${phone.replace(/\s/g, '')}`}
+									class="text-sm hover:text-white"
+								>
+									{phone}
+								</a>
+							{/each}
+						</div>
 					</li>
 					<li class="flex items-start">
 						<Mail class="mt-1 mr-3 h-5 w-5 shrink-0 text-neutral-400" />
@@ -95,10 +102,6 @@
 						>
 							{footerData.sections.contact.email}
 						</a>
-					</li>
-					<li class="flex items-start">
-						<MapPin class="mt-1 mr-3 h-5 w-5 shrink-0 text-neutral-400" />
-						<span class="text-sm">{footerData.sections.contact.address}</span>
 					</li>
 				</ul>
 			</div>

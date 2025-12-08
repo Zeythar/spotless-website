@@ -1,25 +1,29 @@
-export const contactData = {
+import type {ContactData} from '$lib/types';
+
+export const contactData: ContactData = {
 	title: 'Kontakta oss',
 	description: 'Begär en kostnadsfri offert eller kontakta oss för mer information',
 	contactInfo: {
 		title: 'Kontaktinformation',
 		description: 'Så når du oss',
 		details: [
-			{icon: 'Phone', title: 'Telefon', value: '0735-686 467'},
-			{icon: 'Mail', title: 'E-post', value: 'kontakt@spotlessnorrland.se'},
-			{icon: 'MapPin', title: 'Adress', value: 'Midälvavägen 20, Sundsvall'},
-			{icon: 'Clock', title: 'Öppettider', value: 'Mån-Fre: 08:00-17:00'}
+			{icon: 'Phone', title: 'Telefon', value: '070-245 17 90, 0735-686 467'},
+			{icon: 'Mail', title: 'E-post', value: 'info@spotlessnorrland.se'}
 		]
 	},
 	emergency: {
 		title: 'Akut städbehov?',
 		description: 'Vi erbjuder akutstädning 24/7',
-		buttonText: 'Ring nu: 0735-686 467'
+		buttonText: 'Ring nu: 070-245 17 90, 0735-686 467'
 	},
 	form: {
 		title: 'Begär offert',
 		description: 'Fyll i formuläret så återkommer vi till dig',
 		submitButton: 'Skicka',
+		success: {
+			title: 'Tack för ditt meddelande!',
+			description: 'Vi har mottagit din förfrågan och återkommer så snart vi kan.'
+		},
 		fields: {
 			name: {label: 'Namn', placeholder: 'Ditt namn'},
 			email: {label: 'E-post', placeholder: 'din@epost.se'},

@@ -1,13 +1,19 @@
 <script lang="ts">
 	import ServiceSection from '$lib/components/sections/ServiceSection.svelte';
 	import {serviceCategories} from '$lib/data/services';
+	import {seoData} from '$lib/data/seo';
+	import {contactState} from '$lib/state/contact.svelte';
+
+	$effect(() => {
+		contactState.selectedService = 'business';
+	});
 </script>
 
 <svelte:head>
-	<title>Spotless - {serviceCategories.foretag.title}</title>
+	<title>{seoData.servicesForetag.title}</title>
 	<meta
 		name="description"
-		content={serviceCategories.foretag.description}
+		content={seoData.servicesForetag.description}
 	/>
 </svelte:head>
 

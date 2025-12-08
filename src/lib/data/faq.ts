@@ -1,4 +1,6 @@
-export const faqData = {
+import type {FaqData} from '$lib/types';
+
+export const faqData: FaqData = {
 	title: 'Vanliga frågor',
 	description: 'Här hittar du svar på de vanligaste frågorna om våra städtjänster',
 	general: {
@@ -10,7 +12,7 @@ export const faqData = {
 			},
 			{
 				question: 'Vilka områden täcker ni?',
-				answer: 'Vi täcker hela Stockholms län och närliggande områden. För vissa specialtjänster kan vi även ta uppdrag längre bort. Kontakta oss så berättar vi om vi kan hjälpa dig i ditt område.'
+				answer: 'Vi täcker hela Sundsvalls kommun och närliggande områden. För vissa specialtjänster kan vi även ta uppdrag längre bort. Kontakta oss så berättar vi om vi kan hjälpa dig i ditt område.'
 			},
 			{
 				question: 'Är era städare försäkrade?',
@@ -46,7 +48,7 @@ export const faqData = {
 			},
 			{
 				question: 'Hur betalar jag för tjänsterna?',
-				answer: 'Vi skickar faktura efter utförd tjänst med 30 dagars betalningsvillkor. För företagskunder kan vi ordna månadsfakturering. Vi accepterar också Swish och kortbetalning.'
+				answer: 'Vi skickar faktura efter utförd tjänst med 30 dagars betalningsvillkor. För företagskunder kan vi ordna månadsfakturering.'
 			},
 			{
 				question: 'Städar ni på helger?',
@@ -71,11 +73,11 @@ export const faqData = {
 		items: [
 			{
 				question: 'Vilka betalningsmetoder accepterar ni?',
-				answer: 'Vi accepterar banköverföring, Swish, kort och autogiro för regelbundna städningar. Företagskunder får faktura med 30 dagars betalningsvillkor.'
+				answer: 'Vi accepterar banköverföring, kort och autogiro för regelbundna städningar. Företagskunder får faktura med 30 dagars betalningsvillkor.'
 			},
 			{
 				question: 'Hur fungerar ROT-avdraget?',
-				answer: 'Vi hanterar all ROT-administration åt dig. Du betalar hela beloppet till oss och vi rapporterar automatiskt till Skatteverket. Du får sedan pengarna tillbaka via din deklaration eller preliminärskatt.'
+				answer: 'Vi sköter hela ROT-processen åt dig. Vi drar av ROT-avdraget direkt på fakturan och rapporterar arbetet till Skatteverket. Du behöver bara se till att du är berättigad till avdraget.'
 			},
 			{
 				question: 'Kan jag få en offert innan jag bokar?',
@@ -86,7 +88,7 @@ export const faqData = {
 	contact: {
 		title: 'Hittar du inte svaret?',
 		description: 'Kontakta oss direkt så hjälper vi dig gärna!',
-		phone: '08-123 45 67',
-		email: 'info@stadcentral.se'
+		phone: '070-245 17 90, 0735-686 467',
+		email: 'info@spotlessnorrland.se'
 	}
 };

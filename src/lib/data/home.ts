@@ -1,4 +1,6 @@
-export const heroData = {
+import type {HeroData, AboutData} from '$lib/types';
+
+export const heroData: HeroData = {
 	title: 'Professionell städning för hem och företag',
 	description:
 		'Släpp städstressen och låt Spotless göra jobbet. Vi erbjuder allt från regelbunden hem- och kontorsstädning till avancerad sanering, utfört med proffsig precision och pålitlighet.',
@@ -7,15 +9,15 @@ export const heroData = {
 		secondary: 'Se våra tjänster'
 	},
 	image: {
-		src: '/images/content/site-hero.jpg',
+		src: '/images/home/site-hero.jpg',
 		alt: 'Professionell städtjänst'
 	}
 };
 
-export const aboutData = {
+export const aboutData: AboutData = {
 	title: 'Om Spotless',
 	description: [
-		'Spotless är ett ledande städföretag med över 10 års erfarenhet av professionell städning. Vi erbjuder skräddarsydda lösningar för både privatpersoner och företag.',
+		'Spotless är ett ledande städföretag med flera års erfarenhet av professionell städning. Vi erbjuder skräddarsydda lösningar för både privatpersoner och företag.',
 		'Vår filosofi bygger på kvalitet, tillförlitlighet och kundnöjdhet. Vi använder miljövänliga produkter och moderna metoder för att leverera bästa möjliga resultat.'
 	],
 	features: [

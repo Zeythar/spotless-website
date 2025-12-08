@@ -1,4 +1,6 @@
-export const navigationData = {
+import type {NavigationData} from '$lib/types';
+
+export const navigationData: NavigationData = {
 	links: [
 		{label: 'Hem', href: '/'},
 		{

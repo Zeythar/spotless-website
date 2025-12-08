@@ -1,4 +1,6 @@
-export const cleaningGuideData = {
+import type {CleaningGuideData} from '$lib/types';
+
+export const cleaningGuideData: CleaningGuideData = {
 	title: 'Städguide & Tips',
 	description: 'Praktiska råd och tips för att hålla ditt hem rent mellan våra städbesök',
 	quickTips: {
@@ -40,7 +42,7 @@ export const cleaningGuideData = {
 			description: 'Så håller du köket rent och fräscht',
 			badge: 'Kök',
 			image: {
-				src: 'https://images.unsplash.com/photo-1759238136854-913e5e383308?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBraXRjaGVuJTIwY2xlYW4lMjBjb3VudGVydG9wfGVufDF8fHx8MTc2NDM1NzY2Mnww&ixlib=rb-4.1.0&q=80&w=1080',
+				src: '/images/cleaning-guide/kitchen.jpg',
 				alt: 'Kök'
 			},
 			tips: [
@@ -80,7 +82,7 @@ export const cleaningGuideData = {
 			description: 'Håll badrummet rent och fritt från mögel',
 			badge: 'Badrum',
 			image: {
-				src: 'https://images.unsplash.com/photo-1762810963385-0d91f2539fa2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbGVhbiUyMG1vZGVybiUyMGJhdGhyb29tJTIwd2hpdGV8ZW58MXx8fHwxNzY0MzU3NjYzfDA&ixlib=rb-4.1.0&q=80&w=1080',
+				src: '/images/cleaning-guide/bathroom.jpg',
 				alt: 'Badrum'
 			},
 			tips: [

@@ -13,7 +13,7 @@
 <section class="bg-muted/30 py-20">
 	<div class="container mx-auto px-4">
 		<div class="mb-12 text-center">
-			<h2 class="mb-4 text-3xl lg:text-4xl">{faqData.title}</h2>
+			<h2 class="mb-4 text-3xl font-medium lg:text-4xl">{faqData.title}</h2>
 			<p class="mx-auto max-w-2xl text-lg text-muted-foreground">
 				{faqData.description}
 			</p>
@@ -32,7 +32,9 @@
 						>
 							{#each faqData.general.items as item, index}
 								<AccordionItem value={`item-${index}`}>
-									<AccordionTrigger>{item.question}</AccordionTrigger>
+									<AccordionTrigger class="cursor-pointer"
+										>{item.question}</AccordionTrigger
+									>
 									<AccordionContent>
 										<p class="text-muted-foreground">{item.answer}</p>
 									</AccordionContent>
@@ -54,7 +56,7 @@
 						>
 							{#each faqData.payment.items as item, index}
 								<AccordionItem value={`payment-${index}`}>
-									<AccordionTrigger class="text-left"
+									<AccordionTrigger class="cursor-pointer text-left"
 										>{item.question}</AccordionTrigger
 									>
 									<AccordionContent>
@@ -66,7 +68,9 @@
 					</CardContent>
 				</Card>
 
-				<Card class="border-0 bg-linear-to-br from-[#1a9bce] to-[#61c9b7] text-white">
+				<Card
+					class="gap-0 border-0 bg-linear-to-br from-brand-primary to-brand-secondary text-white"
+				>
 					<CardHeader>
 						<CardTitle class="text-white">{faqData.contact.title}</CardTitle>
 					</CardHeader>
@@ -75,13 +79,27 @@
 							{faqData.contact.description}
 						</p>
 						<div class="flex flex-col gap-2 space-y-2 text-sm">
+							<div class="flex items-center gap-2 text-white/90">
+								<Phone class="h-4 w-4 shrink-0" />
+								<div class="flex flex-col">
+									{#each faqData.contact.phone.split(', ') as phone}
+										<a
+											href={`tel:${phone.replace(/\s/g, '')}`}
+											class="hover:text-white hover:underline"
+										>
+											{phone}
+										</a>
+									{/each}
+								</div>
+							</div>
 							<p class="inline-flex items-center gap-2 text-white/90">
-								<Phone />
-								{faqData.contact.phone}
-							</p>
-							<p class="inline-flex items-center gap-2 text-white/90">
-								<Mail />
-								{faqData.contact.email}
+								<Mail class="h-4 w-4" />
+								<a
+									href={`mailto:${faqData.contact.email}`}
+									class="hover:text-white hover:underline"
+								>
+									{faqData.contact.email}
+								</a>
 							</p>
 						</div>
 					</CardContent>

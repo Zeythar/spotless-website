@@ -1,6 +1,8 @@
-export const footerData = {
+import type {FooterData} from '$lib/types';
+
+export const footerData: FooterData = {
 	companyInfo: {
-		description: 'Professionell städning för hem och företag sedan 2025'
+		description: 'Professionell städning för hem och företag sedan 2019'
 	},
 	sections: {
 		pages: {
@@ -27,18 +29,15 @@ export const footerData = {
 		},
 		contact: {
 			title: 'Kontakt',
-			phone: '0735-686 467',
+			phone: '070-245 17 90, 0735-686 467',
 			phoneLink: 'tel:0735686467',
 			email: 'info@spotlessnorrland.se',
 			emailLink: 'mailto:info@spotlessnorrland.se',
-			address: 'Midälvavägen 20, Sundsvall',
-			hours: 'Mån-Fre 08:00-17:00',
 			social: [
 				{icon: 'Facebook', href: '#facebook', label: 'Facebook'},
-				{icon: 'Instagram', href: '#instagram', label: 'Instagram'},
-				{icon: 'Linkedin', href: '#linkedin', label: 'LinkedIn'}
+				{icon: 'Instagram', href: '#instagram', label: 'Instagram'}
 			]
 		}
 	},
-	copyright: (year: number) => `&copy; ${year} Spotless Norrland. Alla rättigheter förbehållna.`
+	copyright: (year: number) => `&copy; ${year} Spotless Städ & Service. Alla rättigheter förbehållna.`
 };

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import {Award, Clock, Shield, Users} from '@lucide/svelte';
+	import {Image} from '$lib/components/ui/image';
 	import {aboutData} from '$lib/data/home';
 
 	const iconMap = {
@@ -20,7 +21,7 @@
 			<div class="order-2 lg:order-1">
 				<div class="relative">
 					<div class="aspect-4/3 overflow-hidden rounded-2xl shadow-xl">
-						<img
+						<Image
 							src={aboutData.image.src}
 							alt={aboutData.image.alt}
 							class="h-full w-full object-cover"
@@ -28,7 +29,7 @@
 					</div>
 					<!-- Decorative element -->
 					<div
-						class="absolute -top-6 -left-6 -z-10 h-64 w-64 rounded-2xl bg-linear-to-br from-[#61c9b7] to-[#1a9bce] opacity-20"
+						class="absolute -top-6 -left-6 -z-10 h-64 w-64 rounded-2xl bg-linear-to-br from-brand-secondary to-brand-primary opacity-20"
 					></div>
 				</div>
 			</div>
@@ -36,7 +37,7 @@
 			<!-- Content -->
 			<div class="order-1 space-y-6 lg:order-2">
 				<div>
-					<h2 class="mb-4 text-3xl lg:text-4xl">{aboutData.title}</h2>
+					<h2 class="mb-4 text-3xl font-medium lg:text-4xl">{aboutData.title}</h2>
 					{#each aboutData.description as paragraph}
 						<p class="mb-6 text-lg text-muted-foreground last:mb-0">
 							{paragraph}
@@ -51,9 +52,9 @@
 						<div class="space-y-2">
 							<div class="flex items-center gap-3">
 								<div
-									class="rounded-lg bg-linear-to-br from-[#1a9bce]/20 to-[#61c9b7]/20 p-2"
+									class="rounded-lg bg-linear-to-br from-brand-primary/20 to-brand-secondary/20 p-2"
 								>
-									<Icon class="h-5 w-5 text-[#1a9bce]" />
+									<Icon class="h-5 w-5 text-brand-primary" />
 								</div>
 								<h4 class="font-medium">{feature.title}</h4>
 							</div>

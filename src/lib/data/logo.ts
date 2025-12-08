@@ -1,7 +1,7 @@
 export const logoData = {
-	alt: 'Spotless Norrland Logo',
+	alt: 'Logotyp för Spotless Städ & Service',
 	images: {
-		default: '/images/prototyp-1.png',
-		white: '/images/prototyp-1-white.png'
+		default: '/images/logo/spotless-black.png',
+		white: '/images/logo/spotless-white.png'
 	}
 };

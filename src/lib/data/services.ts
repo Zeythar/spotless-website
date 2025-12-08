@@ -1,10 +1,12 @@
-export const serviceCategories = {
+import type {ServicesData} from '$lib/types';
+
+export const serviceCategories: ServicesData = {
 	hem: {
 		id: 'hem',
 		title: 'Hem & Privatstädning',
 		description: 'Professionell hemstädning anpassad efter dina behov och schema',
 		longDescription:
-			'Vi på Spotless erbjuder omfattande hemstädningstjänster för privatpersoner i hela Stockholm och närområden. Oavsett om du behöver regelbunden hemstädning, en grundlig storstädning eller akut städhjälp, så har vi rätt lösning för dig. Våra erfarna städare använder miljövänliga produkter och modern utrustning för att ge ditt hem den omsorg det förtjänar. Vi förstår att varje hem är unikt, därför skräddarsyr vi våra tjänster efter dina specifika önskemål och behov.',
+			'Vi på Spotless erbjuder omfattande hemstädningstjänster för privatpersoner i hela Sundsvalls kommun och närområden. Oavsett om du behöver regelbunden hemstädning, en grundlig storstädning eller akut städhjälp, så har vi rätt lösning för dig. Våra erfarna städare använder miljövänliga produkter och modern utrustning för att ge ditt hem den omsorg det förtjänar. Vi förstår att varje hem är unikt, därför skräddarsyr vi våra tjänster efter dina specifika önskemål och behov.',
 		services: [
 			{
 				name: 'Hemstädning',
@@ -14,7 +16,7 @@ export const serviceCategories = {
 					'Dammtorkning av ytor och möbler',
 					'Rengöring av kök och badrum',
 					'Tömning av papperskorgar',
-					'Bäddning vid önskemål',
+					'Putsning av speglar och vägguttag',
 					'Flexibel schemaläggning'
 				]
 			},
@@ -27,7 +29,7 @@ export const serviceCategories = {
 					'Torkning av skåp in- och utvändigt',
 					'Avfrostning och rengöring av kyl och frys',
 					'Ugnsrengöring',
-					'Rengöring bakom möbler och vitvaror'
+					'Rengöring av dörrar, karmar och lister'
 				]
 			},
 			{
@@ -37,8 +39,8 @@ export const serviceCategories = {
 					'Rotcertifierad enligt branschstandard',
 					'Garanterad godkännande',
 					'Rengöring av alla ytor, in- och utvändigt',
-					'Fönsterputsning',
-					'Rengöring av vitvaror',
+					'Fönsterputsning ingår',
+					'Rengöring av vitvaror och vattenlås',
 					'Besiktningsrapport ingår'
 				]
 			},
@@ -60,7 +62,7 @@ export const serviceCategories = {
 				features: [
 					'Invändig och utvändig rengöring',
 					'Rengöring av karmar och bleck',
-					'Stegfritt system för höga fönster',
+					'Rengöring av persienner vid önskemål',
 					'Inga ränder eller fläckar',
 					'Miljövänliga produkter',
 					'Säsongsanpassad service'
@@ -273,15 +275,27 @@ export const serviceCategories = {
 				]
 			},
 			{
-				name: 'Grovsanering',
-				description: 'Omfattande sanering av starkt nedsmutsat utrymmen',
+				name: 'Dödsbo',
+				description: 'Varsam och respektfull städning av dödsbo',
 				features: [
-					'Sanering efter brand eller vattenskada',
-					'Rengöring av extremt förorenade miljöer',
-					'Borttagning av mögel och bakterier',
-					'Högtryckstvätt och djuprengöring',
-					'Desinficering med professionella medel',
-					'Certifikat efter genomförd sanering'
+					'Tömning och bortforsling',
+					'Fullständig städning av bostaden',
+					'Diskret och respektfull hantering',
+					'Samarbete med anhöriga',
+					'Helhetslösning för dödsbon',
+					'Omtanke om hemmet'
+				]
+			},
+			{
+				name: 'Dödsbo',
+				description: 'Varsam och respektfull städning av dödsbo',
+				features: [
+					'Tömning och bortforsling',
+					'Fullständig städning av bostaden',
+					'Diskret och respektfull hantering',
+					'Samarbete med anhöriga',
+					'Helhetslösning för dödsbon',
+					'Omtanke om hemmet'
 				]
 			},
 			{
@@ -355,7 +369,7 @@ export const serviceCategories = {
 		title: 'Service, Fastighet & Övrigt',
 		description: 'Kompletta fastighetstjänster och servicelösningar',
 		longDescription:
-			'Spotless erbjuder mycket mer än traditionell städning. Vi är din kompletta partner för fastighetsskötsel och servicetjänster. Från trädgårdsskötsel och gräsklippning till målning och handyman-tjänster - vi hjälper dig att hålla din fastighet i toppskick året runt. Vårt breda tjänsteutbud gör att du kan använda en enda leverantör för alla dina fastighets- och servicebehov, vilket sparar tid och förenklar administration. Vi arbetar både med privatpersoner, bostadsrättsföreningar och fastighetsbolag.',
+			'Spotless erbjuder mycket mer än traditionell städning. Vi är din kompletta partner för fastighetsskötsel och servicetjänster. Från trädgårdsskötsel och gräsklippning till målning - vi hjälper dig att hålla din fastighet i toppskick året runt. Vårt breda tjänsteutbud gör att du kan använda en enda leverantör för alla dina fastighets- och servicebehov, vilket sparar tid och förenklar administration. Vi arbetar både med privatpersoner, bostadsrättsföreningar och fastighetsbolag.',
 		services: [
 			{
 				name: 'Gräsklippning',
@@ -367,18 +381,6 @@ export const serviceCategories = {
 					'Gödsling och översådd vid behov',
 					'Vertikalskärning för hälsosammare gräs',
 					'Höst- och vårstädning av trädgården'
-				]
-			},
-			{
-				name: 'Möbelmontering & Handyman',
-				description: 'Snabb och pålitlig hjälp med mindre reparationer',
-				features: [
-					'Montering av möbler från IKEA och andra leverantörer',
-					'Upphängning av tavlor och hyllor',
-					'Byte av lampor och elektriska tillbehör',
-					'Mindre snickeriarbeten',
-					'Tätning av fogar och sprickor',
-					'Justering av dörrar och fönster'
 				]
 			},
 			{
@@ -415,6 +417,18 @@ export const serviceCategories = {
 					'Högtryckstvätt av fasader',
 					'Arbete enligt säkerhetsföreskrifter',
 					'Långvariga färgsystem för bästa resultat'
+				]
+			},
+			{
+				name: 'Mattvätt',
+				description: 'Djuprengöring av mattor och textilier för kontor',
+				features: [
+					'Professionell matttvätt på plats',
+					'Fläck- och luktborttagning',
+					'Snabbtorkning och miljövänliga metoder',
+					'Bidrar till bättre arbetsmiljö',
+					'Förlänger mattans livslängd',
+					'Anpassad för kontorsmiljöer'
 				]
 			}
 		],
@@ -455,7 +469,7 @@ export const serviceCategories = {
 			},
 			{
 				question: 'Hur prissätter ni tjänsterna?',
-				answer: 'Det beror på typen av uppdrag. Vissa tjänster som gräsklippning prissätts per tillfälle eller säsong, medan andra som handyman-tjänster prissätts per timme. Vi ger alltid en tydlig offert innan arbetet påbörjas.'
+				answer: 'Det beror på typen av uppdrag. Vissa tjänster som gräsklippning prissätts per tillfälle eller säsong. Vi ger alltid en tydlig offert innan arbetet påbörjas.'
 			}
 		]
 	}

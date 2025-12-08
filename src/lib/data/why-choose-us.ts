@@ -1,11 +1,13 @@
-export const whyChooseUsData = {
+import type {WhyChooseUsData} from '$lib/types';
+
+export const whyChooseUsData: WhyChooseUsData = {
 	title: 'Varför Spotless?',
 	description:
 		'Vi är inte bara ett städföretag - vi är din partner för en renare och trivsammare vardag',
 	stats: [
-		{number: '10+', label: 'Års erfarenhet i branschen'},
-		{number: '500+', label: 'Nöjda återkommande kunder'},
+		{number: '5+', label: 'Års erfarenhet i branschen'},
 		{number: '5000+', label: 'Genomförda städuppdrag'},
+		{number: '100+', label: 'Nöjda återkommande kunder'},
 		{number: '98%', label: 'Av kunderna rekommenderar oss'}
 	],
 	features: [
@@ -39,9 +41,9 @@ export const whyChooseUsData = {
 		},
 		{
 			icon: 'TrendingUp',
-			title: 'Över 10 Års Erfarenhet',
+			title: 'Över 5 Års Erfarenhet',
 			description:
-				'Med över ett decennium i branschen har vi expertis och erfarenhet att hantera alla typer av städuppdrag.',
+				'Med över fem år i branschen har vi expertis och erfarenhet att hantera alla typer av städuppdrag.',
 			category: 'professional'
 		},
 		{
@@ -71,13 +73,6 @@ export const whyChooseUsData = {
 			description:
 				'Flexibla avtal utan bindningstid. Vi vill att du stannar för att du är nöjd, inte för att du är bunden.',
 			category: 'home'
-		},
-		{
-			icon: 'Star',
-			title: '4.9/5 i Kundnöjdhet',
-			description:
-				'Våra kunder ger oss genomsnittligt 4.9 av 5 stjärnor. Läs våra recensioner och se varför.',
-			category: 'home'
 		}
 	],
 	certifications: {
@@ -89,11 +84,10 @@ export const whyChooseUsData = {
 			'Miljödiplomerade',
 			'Arbetsmiljöcertifierade',
 			'Försäkrade enligt branschstandard',
-			'Medlemmar i Städföretagen',
 			'F-skattebevis'
 		],
 		image: {
-			src: 'https://images.unsplash.com/photo-1686178827149-6d55c72d81df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob21lJTIwY2xlYW5pbmd8ZW58MXx8fHwxNzYzOTIxNzAwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+			src: '/images/why-choose-us/vacuum-cleaning.jpg',
 			alt: 'Professionell städning'
 		}
 	},
@@ -103,17 +97,17 @@ export const whyChooseUsData = {
 			{
 				title: 'Fantastisk service!',
 				text: '"Spotless har städat vårt hem i två år nu. Alltid samma kvalitet och de är så trevliga och professionella. Kan varmt rekommendera!"',
-				author: '- Anna L., Stockholm'
+				author: '- Anna, Söråker'
 			},
 			{
 				title: 'Bästa kontorsstädningen',
 				text: '"Vi har provat flera städföretag men Spotless är överlägset bäst. Flexibla, pålitliga och alltid ett perfekt resultat."',
-				author: '- Johan M., företagare'
+				author: '- Johan, företagare'
 			},
 			{
 				title: 'Proffsig flyttstädning',
 				text: '"Flyttstädningen godkändes direkt av hyresvärden. Mycket noggranna och priset var dessutom bra. Rekommenderas varmt!"',
-				author: '- Sara K., Solna'
+				author: '- Sara, Sundsvall'
 			}
 		]
 	}

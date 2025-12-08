@@ -3,6 +3,7 @@
 	import {Button} from '$lib/components/ui/button/index.js';
 	import {fade} from 'svelte/transition';
 	import {floatingActionsData} from '$lib/data/floating-actions';
+	import {contactState} from '$lib/state/contact.svelte';
 
 	let showScrollTop = $state(false);
 
@@ -33,8 +34,9 @@
 	{/if}
 
 	<Button
-		class="group flex h-12 cursor-pointer items-center gap-0 rounded-full bg-linear-to-r from-[#1a9bce] to-[#61c9b7] px-0 text-white shadow-lg transition-all duration-300 hover:gap-2 hover:px-6"
+		class="group flex h-12 cursor-pointer items-center gap-0 rounded-full bg-linear-to-r from-brand-primary to-brand-secondary px-0 text-white shadow-lg transition-all duration-300 hover:gap-2 hover:px-6"
 		aria-label={floatingActionsData.contact.ariaLabel}
+		onclick={() => (contactState.isOpen = true)}
 	>
 		<div class="flex h-12 w-12 items-center justify-center">
 			<Bubbles class="h-6! w-6!" />
