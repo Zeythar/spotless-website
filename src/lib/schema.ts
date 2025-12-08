@@ -1,4 +1,4 @@
-import {email, z} from 'zod';
+import {z} from 'zod';
 import {validationData} from '$lib/data/validation';
 import {contactData} from '$lib/data/contact';
 
