@@ -7,14 +7,14 @@ export const contactData: ContactData = {
 		title: 'Kontaktinformation',
 		description: 'Så når du oss',
 		details: [
-			{icon: 'Phone', title: 'Telefon', value: '070-245 17 90, 0735-686 467'},
+			{icon: 'Phone', title: 'Telefon', value: '070-245 17 90, 073-568 64 67'},
 			{icon: 'Mail', title: 'E-post', value: 'info@spotlessnorrland.se'}
 		]
 	},
 	emergency: {
 		title: 'Akut städbehov?',
 		description: 'Vi erbjuder akutstädning 24/7',
-		buttonText: 'Ring nu: 070-245 17 90, 0735-686 467'
+		buttonText: 'Ring nu: 070-245 17 90, 073-568 64 67'
 	},
 	form: {
 		title: 'Begär offert',

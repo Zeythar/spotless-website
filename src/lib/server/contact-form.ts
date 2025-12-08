@@ -213,7 +213,7 @@ ${message}
       </p>
       <div style="border-top: 1px solid #374151; padding-top: 20px; margin-top: 20px;">
         <p style="margin: 0 0 8px 0; font-size: 13px; color: #9ca3af;">
-          070-245 17 90, 0735-686 467
+          070-245 17 90, 073-568 64 67
         </p>
         <p style="margin: 0; font-size: 13px; color: #9ca3af;">
           info@spotlessnorrland.se

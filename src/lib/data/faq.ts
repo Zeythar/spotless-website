@@ -88,7 +88,7 @@ export const faqData: FaqData = {
 	contact: {
 		title: 'Hittar du inte svaret?',
 		description: 'Kontakta oss direkt så hjälper vi dig gärna!',
-		phone: '070-245 17 90, 0735-686 467',
+		phone: '070-245 17 90, 073-568 64 67',
 		email: 'info@spotlessnorrland.se'
 	}
 };

@@ -14,10 +14,12 @@
 
 <footer class="bg-foreground text-gray-300">
 	<div class="container mx-auto px-4 py-12">
-		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+		<div
+			class="grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 md:justify-items-start lg:grid-cols-[1.5fr_1fr_1fr_1fr]"
+		>
 			<!-- Company Info -->
-			<div>
-				<div class="mb-4">
+			<div class="w-full max-w-xs text-center md:max-w-none md:text-left">
+				<div class="mb-4 flex justify-center md:justify-start">
 					<Logo white={true} />
 				</div>
 				<p class="mb-4 text-sm leading-relaxed">
@@ -38,7 +40,7 @@
 			</div>
 
 			<!-- Quick Links -->
-			<div>
+			<div class="w-full max-w-xs text-center md:max-w-none md:text-left">
 				<h3 class="mb-4 text-lg font-semibold text-white">
 					{footerData.sections.pages.title}
 				</h3>
@@ -57,7 +59,7 @@
 			</div>
 
 			<!-- Services -->
-			<div>
+			<div class="w-full max-w-xs text-center md:max-w-none md:text-left">
 				<h3 class="mb-4 text-lg font-semibold text-white">
 					{footerData.sections.services.title}
 				</h3>
@@ -76,12 +78,12 @@
 			</div>
 
 			<!-- Contact Info -->
-			<div>
+			<div class="w-full max-w-xs text-center md:max-w-none md:text-left">
 				<h3 class="mb-4 text-lg font-semibold text-white">
 					{footerData.sections.contact.title}
 				</h3>
 				<ul class="space-y-4">
-					<li class="flex items-center">
+					<li class="flex items-center justify-center md:justify-start">
 						<Phone class="mr-3 h-5 w-5 shrink-0 text-neutral-400" />
 						<div class="flex flex-col gap-1">
 							{#each footerData.sections.contact.phone.split(', ') as phone}
@@ -94,7 +96,7 @@
 							{/each}
 						</div>
 					</li>
-					<li class="flex items-start">
+					<li class="flex items-start justify-center md:justify-start">
 						<Mail class="mt-1 mr-3 h-5 w-5 shrink-0 text-neutral-400" />
 						<a
 							href={footerData.sections.contact.emailLink}

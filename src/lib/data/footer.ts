@@ -29,7 +29,7 @@ export const footerData: FooterData = {
 		},
 		contact: {
 			title: 'Kontakt',
-			phone: '070-245 17 90, 0735-686 467',
+			phone: '070-245 17 90, 073-568 64 67',
 			phoneLink: 'tel:0735686467',
 			email: 'info@spotlessnorrland.se',
 			emailLink: 'mailto:info@spotlessnorrland.se',
@@ -39,5 +39,6 @@ export const footerData: FooterData = {
 			]
 		}
 	},
-	copyright: (year: number) => `&copy; ${year} Spotless Städ & Service. Alla rättigheter förbehållna.`
+	copyright: (year: number) =>
+		`&copy; ${year} Spotless Städ & Service. Alla rättigheter förbehållna.`
 };

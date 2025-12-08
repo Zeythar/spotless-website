@@ -65,10 +65,8 @@
 						<CardContent>
 							<ul class="space-y-2">
 								{#each service.features as feature, idx (idx)}
-									<li class="flex items-start gap-2">
-										<CheckCircle2
-											class="mt-0.5 h-5 w-5 shrink-0 text-brand-primary"
-										/>
+									<li class="flex items-center gap-2">
+										<CheckCircle2 class="h-5 w-5 shrink-0 text-brand-primary" />
 										<span class="text-sm">{feature}</span>
 									</li>
 								{/each}
@@ -89,7 +87,7 @@
 				</h2>
 				<div class="grid gap-6 sm:grid-cols-2">
 					{#each category.benefits || [] as benefit, index (index)}
-						<div class="flex items-start gap-3">
+						<div class="flex items-center gap-3">
 							<div
 								class="shrink-0 rounded-lg bg-linear-to-br from-brand-primary/20 to-brand-secondary/20 p-2"
 							>
@@ -112,13 +110,13 @@
 				</h2>
 				<div class="space-y-6">
 					{#each category.process || [] as step, index (index)}
-						<div class="flex gap-4">
+						<div class="flex items-center gap-4">
 							<div
 								class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-brand-primary to-brand-secondary text-white"
 							>
 								{index + 1}
 							</div>
-							<div class="flex-1 pt-2">
+							<div class="flex-1">
 								<p>{step}</p>
 							</div>
 						</div>

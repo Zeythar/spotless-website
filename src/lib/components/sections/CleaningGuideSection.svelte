@@ -162,9 +162,9 @@
 							<ul class="space-y-2">
 								{#each season.tasks as task}
 									<li
-										class="flex items-start gap-2 text-sm text-muted-foreground"
+										class="flex items-center gap-2 text-sm text-muted-foreground"
 									>
-										<span class="mt-1 text-brand-secondary">•</span>
+										<span class="text-brand-secondary">•</span>
 										<span>{task}</span>
 									</li>
 								{/each}
@@ -196,9 +196,9 @@
 							<ul class="space-y-3">
 								{#each section.tips as tip}
 									<li
-										class="flex items-start gap-2 text-sm text-muted-foreground"
+										class="flex items-center gap-2 text-sm text-muted-foreground"
 									>
-										<span class="mt-1 text-brand-primary">•</span>
+										<span class="text-brand-primary">•</span>
 										<span>{tip}</span>
 									</li>
 								{/each}

@@ -58,16 +58,16 @@
 					<CardContent>
 						<ul class="mb-6 space-y-3">
 							{#each tier.features as feature, idx (idx)}
-								<li class="flex items-start gap-2">
-									<CheckCircle2
-										class="mt-0.5 h-5 w-5 shrink-0 text-brand-primary"
-									/>
+								<li class="flex items-center gap-2">
+									<CheckCircle2 class="h-5 w-5 shrink-0 text-brand-primary" />
 									<span class="text-sm">{feature}</span>
 								</li>
 							{/each}
 						</ul>
 						<Button
-							class="w-full cursor-pointer"
+							class="w-full cursor-pointer {tier.popular
+								? 'border-0 bg-linear-to-r from-brand-primary to-brand-secondary text-white hover:opacity-90'
+								: ''}"
 							variant={tier.popular ? 'default' : 'outline'}
 							onclick={() => scrollToContact(serviceMap[index])}
 						>
@@ -89,10 +89,8 @@
 					</p>
 					<div class="grid gap-2 sm:grid-cols-2">
 						{#each pricesData.rotInfo.list as info, index (index)}
-							<div class="flex items-start gap-2">
-								<CheckCircle2
-									class="mt-0.5 h-4 w-4 shrink-0 text-brand-secondary"
-								/>
+							<div class="flex items-center gap-2">
+								<CheckCircle2 class="h-4 w-4 shrink-0 text-brand-secondary" />
 								<span class="text-sm">{info}</span>
 							</div>
 						{/each}
