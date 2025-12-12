@@ -16,7 +16,7 @@ export const serviceCategories: ServicesData = {
 					'Dammtorkning av ytor och möbler',
 					'Rengöring av kök och badrum',
 					'Tömning av papperskorgar',
-					'Putsning av speglar och vägguttag',
+					'Rengöring av speglar och vägguttag',
 					'Flexibel schemaläggning'
 				]
 			},
@@ -34,10 +34,10 @@ export const serviceCategories: ServicesData = {
 			},
 			{
 				name: 'Flyttstädning',
-				description: 'Garanterad flyttstädning godkänd av hyresvärdar',
+				description: 'Flyttstädning med garanti, godkänd av hyresvärdar',
 				features: [
-					'Rotcertifierad enligt branschstandard',
-					'Garanterad godkännande',
+					'Utförs enligt branschstandard',
+					'Garanterat godkännande',
 					'Rengöring av alla ytor, in- och utvändigt',
 					'Fönsterputsning ingår',
 					'Rengöring av vitvaror och vattenlås',
@@ -49,7 +49,7 @@ export const serviceCategories: ServicesData = {
 				description: 'Snabb städinsats när du behöver det som mest',
 				features: [
 					'Tillgänglig samma dag',
-					'Städning efter händelse eller fest',
+					'Städning efter fest eller tillställning',
 					'Snabb återställning av hemmet',
 					'Flexibel omfattning',
 					'Erfarna städare',
@@ -63,7 +63,7 @@ export const serviceCategories: ServicesData = {
 					'Invändig och utvändig rengöring',
 					'Rengöring av karmar och bleck',
 					'Rengöring av persienner vid önskemål',
-					'Inga ränder eller fläckar',
+					'Lämnar inga ränder eller fläckar',
 					'Miljövänliga produkter',
 					'Säsongsanpassad service'
 				]
@@ -81,7 +81,7 @@ export const serviceCategories: ServicesData = {
 		],
 		process: [
 			'Kontakta oss för ett kostnadsfritt hembesök där vi går igenom dina önskemål och behov',
-			'Vi skapar en skräddarsydd städplan och lämnar en tydlig offert',
+			'Vi skapar en anpassad städplan och lämnar en tydlig offert',
 			'Du får en fast kontaktperson och städare som lär känna ditt hem',
 			'Vi utför städningen enligt överenskommet schema med högsta kvalitet',
 			'Efter varje städning gör vi en kvalitetskontroll för att säkerställa din nöjdhet',
@@ -272,18 +272,6 @@ export const serviceCategories: ServicesData = {
 					'Luktborttagning med professionell utrustning',
 					'Hantering av dödsbon vid behov',
 					'Diskret och empatisk service'
-				]
-			},
-			{
-				name: 'Dödsbo',
-				description: 'Varsam och respektfull städning av dödsbo',
-				features: [
-					'Tömning och bortforsling',
-					'Fullständig städning av bostaden',
-					'Diskret och respektfull hantering',
-					'Samarbete med anhöriga',
-					'Helhetslösning för dödsbon',
-					'Omtanke om hemmet'
 				]
 			},
 			{

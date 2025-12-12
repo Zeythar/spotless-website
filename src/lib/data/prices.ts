@@ -3,7 +3,7 @@ import type {PricesData} from '$lib/types';
 export const pricesData: PricesData = {
 	title: 'Priser & Paket',
 	description:
-		'Transparenta priser utan dolda kostnader. Alla offerter är kostnadsfria och förpliktelsefria',
+		'Transparenta priser utan dolda kostnader. Alla offerter är kostnadsfria och förbindelsefria.',
 	pricingTiers: [
 		{
 			name: 'Hemstädning',
@@ -15,7 +15,7 @@ export const pricesData: PricesData = {
 				'Flexibel schemaläggning',
 				'Samma städare varje gång',
 				'Miljövänliga produkter',
-				'ROT-avdrag möjligt',
+				'RUT-avdrag möjligt',
 				'Ingen bindningstid'
 			]
 		},
@@ -49,14 +49,14 @@ export const pricesData: PricesData = {
 		}
 	],
 	rotInfo: {
-		title: 'ROT-avdrag - Sänk din kostnad med 30%',
+		title: 'RUT- & ROT-avdrag - Sänk din kostnad',
 		description:
-			'Som privatperson har du rätt till ROT-avdrag på många av våra tjänster. Det innebär att du får tillbaka 30% av arbetskostnaden via skatten.',
+			'Som privatperson har du rätt till skattereduktion på många av våra tjänster. Vi drar av beloppet direkt på fakturan.',
 		list: [
-			'30% skattereduktion på arbetskostnaden',
-			'Max 75 000 kr per person och år',
+			'Upp till 50% på städtjänster (RUT)',
+			'Upp till 30% på service- och hantverkstjänster (ROT)',
 			'Vi sköter all administration',
-			'Pengarna tillbaka via deklarationen'
+			'Avdraget görs direkt på fakturan'
 		]
 	},
 	faq: {
@@ -64,7 +64,7 @@ export const pricesData: PricesData = {
 		items: [
 			{
 				question: 'Hur beräknas priset för städning?',
-				answer: 'Priset beror på flera faktorer: typ av städning, bostadens/lokalens storlek, frekvens och omfattning. Vi gör alltid en kostnadsfri besiktning och lämnar en transparent offert innan vi påbörjar arbetet.'
+				answer: 'Priset beror på flera faktorer: typ av städning, bostadens/lokalens storlek, frekvens och omfattning. Vi gör alltid ett kostnadsfritt hembesök och lämnar en transparent offert innan vi påbörjar arbetet.'
 			},
 			{
 				question: 'Finns det några dolda kostnader?',
@@ -76,13 +76,13 @@ export const pricesData: PricesData = {
 			},
 			{
 				question: 'Vad ingår i timpriset?',
-				answer: 'Timpriset inkluderar arbetskostnad, alla städprodukter, utrustning och materialhantering. Du behöver inte tillhandahålla något själv.'
+				answer: 'Timpriset inkluderar arbetskostnad, alla städprodukter, utrustning och material. Du behöver inte tillhandahålla något själv.'
 			}
 		]
 	},
 	cta: {
 		title: 'Vill du veta exakt vad det kostar?',
-		description: 'Begär en kostnadsfri offert idag - ingen förpliktelse',
+		description: 'Begär en kostnadsfri offert idag - utan förbindelser',
 		buttonText: 'Begär kostnadsfri offert'
 	}
 };

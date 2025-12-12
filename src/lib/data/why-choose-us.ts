@@ -5,10 +5,10 @@ export const whyChooseUsData: WhyChooseUsData = {
 	description:
 		'Vi är inte bara ett städföretag - vi är din partner för en renare och trivsammare vardag',
 	stats: [
-		{number: '5+', label: 'Års erfarenhet i branschen'},
+		{number: '5+', label: 'År i branschen'},
 		{number: '5000+', label: 'Genomförda städuppdrag'},
 		{number: '100+', label: 'Nöjda återkommande kunder'},
-		{number: '98%', label: 'Av kunderna rekommenderar oss'}
+		{number: '98%', label: 'Rekommenderar oss'}
 	],
 	features: [
 		{
@@ -80,7 +80,7 @@ export const whyChooseUsData: WhyChooseUsData = {
 		description:
 			'Vi tar kvalitet och säkerhet på största allvar. Därför är vi certifierade enligt branschens högsta standarder och följer alla relevanta bestämmelser och regler.',
 		list: [
-			'ROT-certifierade',
+			'Godkända för F-skatt & RUT/ROT',
 			'Miljödiplomerade',
 			'Arbetsmiljöcertifierade',
 			'Försäkrade enligt branschstandard',

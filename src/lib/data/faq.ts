@@ -16,7 +16,7 @@ export const faqData: FaqData = {
 			},
 			{
 				question: 'Är era städare försäkrade?',
-				answer: 'Ja, alla våra medarbetare är fullt försäkrade. Vi har både ansvarsförsäkring och olycksfallsförsäkring som täcker eventuella skador under arbetets utförande.'
+				answer: 'Ja, alla våra medarbetare är fullt försäkrade. Vi har både ansvarsförsäkring och olycksfallsförsäkring som täcker eventuella skador under arbetet.'
 			},
 			{
 				question: 'Är era städare anställda eller inhyrda?',
@@ -28,7 +28,7 @@ export const faqData: FaqData = {
 			},
 			{
 				question: 'Vad händer om jag inte är nöjd med städningen?',
-				answer: 'Din nöjdhet är vår högsta prioritet. Om du inte är nöjd med resultatet, kontakta oss inom 24 timmar så kommer vi tillbaka och åtgärdar det utan extra kostnad. Vi har kvalitetsgaranti på alla våra tjänster.'
+				answer: 'Att du är nöjd är vår högsta prioritet. Om du inte är nöjd med resultatet, kontakta oss inom 24 timmar så kommer vi tillbaka och åtgärdar det utan extra kostnad. Vi har kvalitetsgaranti på alla våra tjänster.'
 			},
 			{
 				question: 'Använder ni miljövänliga produkter?',
@@ -43,12 +43,12 @@ export const faqData: FaqData = {
 				answer: 'Nej, vi har inga bindningstider. Du kan avsluta eller ändra ditt städavtal med en månads varsel. Vi tror på att behålla våra kunder genom kvalitet, inte genom bindande avtal.'
 			},
 			{
-				question: 'Erbjuder ni ROT-avdrag?',
-				answer: 'Ja, många av våra tjänster är ROT-avdragsgilla för privatpersoner. Vi hjälper dig med all administration och rapporterar automatiskt till Skatteverket.'
+				question: 'Erbjuder ni RUT- och ROT-avdrag?',
+				answer: 'Ja, för privatpersoner erbjuder vi RUT-avdrag (upp till 50%) på städtjänster och ROT-avdrag (upp till 30%) på service- och hantverkstjänster (t.ex. målning). Vi drar av skattereduktionen direkt på fakturan och sköter kontakten med Skatteverket.'
 			},
 			{
 				question: 'Hur betalar jag för tjänsterna?',
-				answer: 'Vi skickar faktura efter utförd tjänst med 30 dagars betalningsvillkor. För företagskunder kan vi ordna månadsfakturering.'
+				answer: 'Vi skickar faktura efter utförd tjänst. Betalningsvillkor är normalt 15-30 dagar för privatpersoner och 30 dagar för företag.'
 			},
 			{
 				question: 'Städar ni på helger?',
@@ -73,15 +73,15 @@ export const faqData: FaqData = {
 		items: [
 			{
 				question: 'Vilka betalningsmetoder accepterar ni?',
-				answer: 'Vi accepterar banköverföring, kort och autogiro för regelbundna städningar. Företagskunder får faktura med 30 dagars betalningsvillkor.'
+				answer: 'I dagsläget accepterar vi betalning via Bankgiro. Vi arbetar på att införa fler betalningsalternativ som Swish och delbetalning inom kort.'
 			},
 			{
-				question: 'Hur fungerar ROT-avdraget?',
-				answer: 'Vi sköter hela ROT-processen åt dig. Vi drar av ROT-avdraget direkt på fakturan och rapporterar arbetet till Skatteverket. Du behöver bara se till att du är berättigad till avdraget.'
+				question: 'Hur fungerar RUT- och ROT-avdraget?',
+				answer: 'Vi drar av RUT (upp till 50%) eller ROT (upp till 30%) direkt på din faktura. Du behöver bara se till att du har utrymme kvar för skattereduktionen hos Skatteverket, så sköter vi resten.'
 			},
 			{
 				question: 'Kan jag få en offert innan jag bokar?',
-				answer: 'Ja, vi erbjuder alltid en kostnadsfri och förpliktelsefri offert. Kontakta oss med dina önskemål så återkommer vi med ett prisförslag.'
+				answer: 'Ja, vi erbjuder alltid en kostnadsfri och förbindelsefri offert. Kontakta oss med dina önskemål så återkommer vi med ett prisförslag.'
 			}
 		]
 	},

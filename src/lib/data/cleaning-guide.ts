@@ -21,7 +21,7 @@ export const cleaningGuideData: CleaningGuideData = {
 					'Öppna fönster under städning för bättre luftkvalitet och snabbare torkning.'
 			},
 			{
-				title: 'Skölj rengöringsmedel',
+				title: 'Skölj bort rengöringsmedel',
 				description:
 					'Skölj alltid av ytor ordentligt efter städning för att undvika rester.'
 			},
@@ -89,12 +89,12 @@ export const cleaningGuideData: CleaningGuideData = {
 				{
 					task: 'Daglig rengöring',
 					description:
-						'Torka av tvättställ och kranar dagligen. Använd squeegee på duschdörrar.'
+						'Torka av tvättställ och kranar dagligen. Använd gummiskrapa på duschdörrar.'
 				},
 				{
 					task: 'Bekämpa mögel',
 					description:
-						'Ventilera efter dusch. Använd klorin på mögelskador och behandla fuger.'
+						'Ventilera efter dusch. Använd klorin på mögelskador och behandla fogar.'
 				},
 				{
 					task: 'Toalettstol',

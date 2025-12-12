@@ -1,9 +1,9 @@
-import type {HeroData, AboutData} from '$lib/types';
+import type {AboutData, HeroData} from '$lib/types';
 
 export const heroData: HeroData = {
 	title: 'Professionell städning för hem och företag',
 	description:
-		'Släpp städstressen och låt Spotless göra jobbet. Vi erbjuder allt från regelbunden hem- och kontorsstädning till avancerad sanering, utfört med proffsig precision och pålitlighet.',
+		'Slipp städstressen och låt Spotless göra jobbet. Vi erbjuder allt från regelbunden hem- och kontorsstädning till avancerad sanering, utfört med professionell precision och pålitlighet.',
 	buttons: {
 		primary: 'Begär offert',
 		secondary: 'Se våra tjänster'
