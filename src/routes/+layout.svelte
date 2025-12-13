@@ -1,31 +1,23 @@
 <script lang="ts">
-	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import ContactForm from '$lib/components/forms/ContactForm.svelte';
+	import CookieBanner from '$lib/components/shared/CookieBanner.svelte';
+	import FloatingActions from '$lib/components/shared/FloatingActions.svelte';
 	import Footer from '$lib/components/shared/Footer.svelte';
 	import Header from '$lib/components/shared/Header.svelte';
-	import FloatingActions from '$lib/components/shared/FloatingActions.svelte';
-	import CookieBanner from '$lib/components/shared/CookieBanner.svelte';
-	import type {LayoutData} from './$types';
 	import {
 		Dialog,
 		DialogContent,
+		DialogDescription,
 		DialogHeader,
-		DialogTitle,
-		DialogDescription
+		DialogTitle
 	} from '$lib/components/ui/dialog';
-	import ContactForm from '$lib/components/forms/ContactForm.svelte';
-	import {contactState} from '$lib/state/contact.svelte';
 	import {contactData} from '$lib/data/contact';
+	import {contactState} from '$lib/state/contact.svelte';
+	import type {LayoutData} from './$types';
+	import './layout.css';
 
 	let {children, data}: {children: any; data: LayoutData} = $props();
 </script>
-
-<svelte:head>
-	<link
-		rel="icon"
-		href={favicon}
-	/>
-</svelte:head>
 
 <Header />
 {@render children()}
