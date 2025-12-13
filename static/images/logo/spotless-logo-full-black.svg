@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1013.9044mm"
+   height="300.95166mm"
+   viewBox="0 0 1013.9045 300.95166"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="Logo-Full-White.svg"
+   inkscape:export-filename="Spotless-Full-Black.svg"
+   inkscape:export-xdpi="25.051676"
+   inkscape:export-ydpi="25.051676"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showguides="true"
+     inkscape:zoom="0.1767767"
+     inkscape:cx="1269.9638"
+     inkscape:cy="472.34733"
+     inkscape:window-width="1904"
+     inkscape:window-height="919"
+     inkscape:window-x="20"
+     inkscape:window-y="20"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer3">
+    <sodipodi:guide
+       position="-0.077654331,115.01906"
+       orientation="1,0"
+       id="guide18"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="1013.9042,-0.47582073"
+       orientation="1,0"
+       id="guide19"
+       inkscape:locked="false" />
+    <inkscape:page
+       x="0"
+       y="0"
+       width="1013.9045"
+       height="300.95166"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Logo"
+     transform="translate(-0.07770294,2.0313957)">
+    <g
+       inkscape:label="Droplet"
+       inkscape:groupmode="layer"
+       id="layer1"
+       transform="matrix(1.1326678,0,0,1.1326678,-13.582193,-20.308943)"
+       style="display:inline;fill:none">
+      <path
+         id="path1"
+         style="fill:#61c9b7;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         inkscape:label="Bottom"
+         d="M 170.64983,203.92637 C 98.375422,203.60346 59.654757,174.56182 51.884188,136.99238 c -9.029117,16.9811 -15.52162,33.22246 -15.52162,46.99509 0,41.11002 27.826437,73.33819 68.330072,73.33819 33.65821,0 58.50063,-22.28617 65.95719,-53.39929 z" />
+      <path
+         id="path7"
+         style="fill:#1a9bce;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         inkscape:label="Top"
+         d="m 104.69264,40.649391 c -6.971069,26.0164 -34.886495,62.637089 -52.808452,96.342989 7.770569,37.56944 46.491234,66.61108 118.765642,66.93399 1.51652,-6.32781 2.37334,-12.99101 2.37334,-19.9389 0,-41.10985 -57.84743,-104.214566 -68.33053,-143.338079 z" />
+    </g>
+    <path
+       style="font-variation-settings:normal;display:inline;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       d="m 36.848914,190.42042 c 0.265645,23.59518 15.434327,45.31997 35.82688,56.41094 16.002127,9.0053 35.919906,11.41202 53.259096,4.93848 4.25289,-1.12651 8.10997,-3.24762 12.0799,-5.08514 C 113.163,253.34372 90.150925,246.6299 68.657351,233.49734 54.526322,224.80074 41.25367,206.85919 36.848914,190.42042 Z"
+       id="path6"
+       inkscape:label="Shine"
+       sodipodi:nodetypes="cccccc" />
+    <path
+       id="path9-1"
+       style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.277553"
+       d="m 145.21687,152.25003 v 48.12832 c -0.001,6e-5 -0.003,0 -0.004,0 -1.15728,0 -2.12212,-13.90794 -6.66834,-18.45417 -4.54624,-4.54623 -17.39589,-4.45271 -17.39589,-5.60999 0,-1.15729 12.84965,-1.06376 17.39589,-5.60999 4.54622,-4.54623 5.51106,-18.45417 6.66834,-18.45417 10e-4,0 0.003,-6e-5 0.004,0 z m 0,0 v 48.12832 c 0.001,6e-5 0.003,0 0.004,0 1.15729,0 2.12213,-13.90794 6.66837,-18.45417 4.54624,-4.54623 17.39585,-4.45271 17.39585,-5.60999 0,-1.15729 -12.84961,-1.06376 -17.39585,-5.60999 -4.54624,-4.54623 -5.51108,-18.45417 -6.66837,-18.45417 -0.001,0 -0.003,-6e-5 -0.004,0 z"
+       inkscape:label="Sparkle" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Text"
+     transform="translate(17.904659,1.9758197)"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-size:176.389px;font-variation-settings:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;opacity:1;vector-effect:none;fill:#1c1c1c;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       x="228.87349"
+       y="210.60802"
+       id="text10"
+       inkscape:label="Städ &amp; Service"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:176.389px;font-family:Poppins;-inkscape-font-specification:'Poppins Medium';fill:#1c1c1c;fill-opacity:1;stroke-width:0.264583"
+         x="228.87349"
+         y="210.60802">Spotless</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:63.5px;font-variation-settings:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;opacity:1;vector-effect:none;fill:#1c1c1c;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       x="508.85971"
+       y="270.38559"
+       id="text11"
+       inkscape:label="Spotless"><tspan
+         sodipodi:role="line"
+         id="tspan11"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:63.5px;font-family:Poppins;-inkscape-font-specification:'Poppins Medium';fill:#1c1c1c;fill-opacity:1;stroke-width:0.264583"
+         x="508.85971"
+         y="270.38559">Städ &amp; Service</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Measurement"
+     transform="translate(-0.07765434,1.9758197)">
+    <rect
+       style="display:none;opacity:1;vector-effect:none;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       id="rect14"
+       width="154.75826"
+       height="245.97583"
+       x="27.21224"
+       y="25.788883"
+       inkscape:label="Full logo area" />
+    <rect
+       style="display:none;opacity:1;vector-effect:none;fill:#00ff0e;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       id="rect15"
+       width="77.379128"
+       height="245.97583"
+       x="104.59136"
+       y="25.788883"
+       inkscape:label="Half logo area" />
+    <rect
+       style="display:none;opacity:1;vector-effect:none;fill:#1300ff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       id="rect16"
+       width="38.281185"
+       height="245.42223"
+       x="104.99974"
+       y="25.788883"
+       ry="3.5527137e-15"
+       inkscape:label="Quarter logo area" />
+    <rect
+       style="display:none;opacity:1;vector-effect:none;fill:#00ff0e;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       id="rect17"
+       width="77.379128"
+       height="245.97583"
+       x="179.70732"
+       y="25.235287"
+       inkscape:label="Half logo area" />
+  </g>
+</svg>

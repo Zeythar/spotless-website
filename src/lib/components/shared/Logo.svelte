@@ -11,6 +11,6 @@
 	<img
 		src={white ? logoData.images.white : logoData.images.default}
 		alt={logoData.alt}
-		class="h-12"
+		class="h-13"
 	/>
 </a>

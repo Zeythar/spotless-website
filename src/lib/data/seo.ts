@@ -1,6 +1,6 @@
 export const seoData = {
 	home: {
-		title: 'Din partner inom städ och service - Spotless Städ & Service',
+		title: 'Spotless Städ & Service - Din partner inom städ och service',
 		description:
 			'Spotless erbjuder professionell städning för hem och företag. Vi utför allt från regelbunden städning till avancerad sanering med fokus på kvalitet, pålitlighet och miljövänliga metoder. Kontakta oss för en offert redan idag.'
 	},
