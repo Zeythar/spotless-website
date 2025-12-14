@@ -8,6 +8,7 @@ import {contactData} from '$lib/data/contact';
 import {formSchema} from '$lib/schema';
 import type {RequestEvent} from '@sveltejs/kit';
 import {fail} from '@sveltejs/kit';
+import {checkBotId} from 'botid/server';
 import FormData from 'form-data';
 import Mailgun from 'mailgun.js';
 import {superValidate} from 'sveltekit-superforms';
@@ -51,6 +52,20 @@ export const handleContactForm = async (event: RequestEvent) => {
 		return fail(400, {
 			form,
 			error: 'Recaptcha validation failed'
+		});
+	}
+
+	// Vercel Bot Protection
+	const botVerification = await checkBotId({
+		advancedOptions: {
+			headers: Object.fromEntries(event.request.headers)
+		}
+	});
+	if (botVerification.isBot) {
+		console.log('Vercel Bot detected');
+		return fail(400, {
+			form,
+			error: 'Bot detected'
 		});
 	}
 
