@@ -1,7 +1,6 @@
 <script lang="ts">
 	import ContactForm from '$lib/components/forms/ContactForm.svelte';
 	import CookieBanner from '$lib/components/shared/CookieBanner.svelte';
-	import FloatingActions from '$lib/components/shared/FloatingActions.svelte';
 	import Footer from '$lib/components/shared/Footer.svelte';
 	import Header from '$lib/components/shared/Header.svelte';
 	import {
@@ -28,7 +27,6 @@
 	{@render children()}
 </main>
 <Footer />
-<FloatingActions />
 <CookieBanner />
 
 <Dialog bind:open={contactState.isOpen}>
