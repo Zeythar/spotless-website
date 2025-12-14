@@ -21,7 +21,7 @@
 	// Track page views on navigation
 	afterNavigate(() => {
 		if (browser) {
-			gtag('config', 'G-32Y4BXHR32', {
+			gtag('event', 'page_view', {
 				page_path: $page.url.pathname
 			});
 		}
