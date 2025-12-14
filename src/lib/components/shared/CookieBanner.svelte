@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
-	import { afterNavigate } from '$app/navigation';
-	import { page } from '$app/stores';
-	import { privacyData } from '$lib/data/privacy';
-	import { X } from '@lucide/svelte';
-	import { onMount } from 'svelte';
-	import { fade, fly } from 'svelte/transition';
+	import {browser} from '$app/environment';
+	import {afterNavigate} from '$app/navigation';
+	import {page} from '$app/stores';
+	import {privacyData} from '$lib/data/privacy';
+	import {X} from '@lucide/svelte';
+	import {onMount} from 'svelte';
+	import {fade, fly} from 'svelte/transition';
 
 	let isVisible = $state(false);
 	let showSettings = $state(false);
