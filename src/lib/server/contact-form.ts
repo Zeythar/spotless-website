@@ -1,4 +1,9 @@
-import {MAILGUN_API_KEY, MAILGUN_DOMAIN} from '$env/static/private';
+import {
+	MAILGUN_API_KEY,
+	MAILGUN_DOMAIN,
+	RECAPTCHA_SECRET_KEY,
+	RECAPTCHA_SITE_KEY
+} from '$env/static/private';
 import {contactData} from '$lib/data/contact';
 import {formSchema} from '$lib/schema';
 import type {RequestEvent} from '@sveltejs/kit';
@@ -10,7 +15,8 @@ import {zod4} from 'sveltekit-superforms/adapters';
 
 export const loadContactForm = async () => {
 	return {
-		form: await superValidate(zod4(formSchema))
+		form: await superValidate(zod4(formSchema)),
+		recaptchaSiteKey: RECAPTCHA_SITE_KEY
 	};
 };
 
@@ -19,6 +25,32 @@ export const handleContactForm = async (event: RequestEvent) => {
 	if (!form.valid) {
 		return fail(400, {
 			form
+		});
+	}
+
+	const {token} = form.data;
+
+	if (!token) {
+		return fail(400, {
+			form,
+			error: 'Recaptcha token missing'
+		});
+	}
+
+	const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded'
+		},
+		body: `secret=${RECAPTCHA_SECRET_KEY}&response=${token}`
+	});
+
+	const data = await response.json();
+
+	if (!data.success || data.score < 0.5) {
+		return fail(400, {
+			form,
+			error: 'Recaptcha validation failed'
 		});
 	}
 

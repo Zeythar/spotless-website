@@ -2,11 +2,12 @@
 	import ContactSection from '$lib/components/sections/ContactSection.svelte';
 	import WhyChooseUsSection from '$lib/components/sections/WhyChooseUsSection.svelte';
 
-	import type {FormSchema} from '$lib/schema';
-	import type {SuperValidated, Infer} from 'sveltekit-superforms';
 	import {seoData} from '$lib/data/seo';
+	import type {FormSchema} from '$lib/schema';
+	import type {Infer, SuperValidated} from 'sveltekit-superforms';
 
-	let {data}: {data: {form: SuperValidated<Infer<FormSchema>>}} = $props();
+	let {data}: {data: {form: SuperValidated<Infer<FormSchema>>; recaptchaSiteKey: string}} =
+		$props();
 </script>
 
 <svelte:head>
@@ -18,4 +19,7 @@
 </svelte:head>
 
 <WhyChooseUsSection />
-<ContactSection data={data.form} />
+<ContactSection
+	data={data.form}
+	recaptchaSiteKey={data.recaptchaSiteKey}
+/>

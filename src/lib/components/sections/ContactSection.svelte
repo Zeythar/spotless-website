@@ -1,19 +1,26 @@
 <script lang="ts">
+	import ContactForm from '$lib/components/forms/ContactForm.svelte';
+	import {Button} from '$lib/components/ui/button/index.js';
+	import {contactData} from '$lib/data/contact';
+	import {type FormSchema} from '$lib/schema';
+	import {cn} from '$lib/utils';
+	import {Mail, Phone} from '@lucide/svelte';
+	import {type Infer, type SuperValidated} from 'sveltekit-superforms';
 	import CardContent from '../ui/card/card-content.svelte';
 	import CardDescription from '../ui/card/card-description.svelte';
 	import CardHeader from '../ui/card/card-header.svelte';
 	import CardTitle from '../ui/card/card-title.svelte';
 	import Card from '../ui/card/card.svelte';
-	import {Clock, Info, Mail, MapPin, Phone} from '@lucide/svelte';
-	import {Button} from '$lib/components/ui/button/index.js';
-	import {type SuperValidated, type Infer} from 'sveltekit-superforms';
-	import {formSchema, type FormSchema} from '$lib/schema';
-	import {contactData} from '$lib/data/contact';
-	import {cn} from '$lib/utils';
-	import ContactForm from '$lib/components/forms/ContactForm.svelte';
 
-	let {data, class: className}: {data: SuperValidated<Infer<FormSchema>>; class?: string} =
-		$props();
+	let {
+		data,
+		class: className,
+		recaptchaSiteKey
+	}: {
+		data: SuperValidated<Infer<FormSchema>>;
+		class?: string;
+		recaptchaSiteKey: string;
+	} = $props();
 
 	const iconMap = {
 		Phone,
@@ -119,6 +126,7 @@
 					<ContactForm
 						{data}
 						id="contact-form-section"
+						{recaptchaSiteKey}
 					/>
 				</CardContent>
 			</Card>

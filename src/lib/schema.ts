@@ -1,6 +1,6 @@
-import {z} from 'zod';
-import {validationData} from '$lib/data/validation';
 import {contactData} from '$lib/data/contact';
+import {validationData} from '$lib/data/validation';
+import {z} from 'zod';
 
 const serviceOptions = (contactData.form.fields.service.options || []).map((o) => o.value) as [
 	string,
@@ -21,7 +21,8 @@ export const formSchema = z.object({
 		.string()
 		.min(1, validationData.message.required)
 		.min(10, validationData.message.minLength),
-	confirmEmail: z.string().optional()
+	confirmEmail: z.string().optional(),
+	token: z.string().optional()
 });
 
 export type FormSchema = typeof formSchema;

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import {Alert, AlertDescription, AlertTitle} from '$lib/components/ui/alert/index.js';
+	import {Button} from '$lib/components/ui/button/index.js';
 	import {
 		FormControl,
 		FormDescription,
@@ -7,7 +9,6 @@
 		FormLabel
 	} from '$lib/components/ui/form/index.js';
 	import {Input} from '$lib/components/ui/input/index.js';
-	import {Button} from '$lib/components/ui/button/index.js';
 	import {
 		Select,
 		SelectContent,
@@ -15,25 +16,40 @@
 		SelectTrigger
 	} from '$lib/components/ui/select/index.js';
 	import {Textarea} from '$lib/components/ui/textarea/index.js';
-	import {formSchema, type FormSchema} from '$lib/schema';
-	import {type SuperValidated, type Infer, superForm} from 'sveltekit-superforms';
-	import {zod4Client} from 'sveltekit-superforms/adapters';
 	import {contactData} from '$lib/data/contact';
+	import {formSchema, type FormSchema} from '$lib/schema';
 	import {contactState} from '$lib/state/contact.svelte';
-	import {Alert, AlertDescription, AlertTitle} from '$lib/components/ui/alert/index.js';
 	import {CheckCircle2} from '@lucide/svelte';
+	import {type Infer, superForm, type SuperValidated} from 'sveltekit-superforms';
+	import {zod4Client} from 'sveltekit-superforms/adapters';
 
 	let {
 		data,
 		id,
-		onsuccess
-	}: {data: SuperValidated<Infer<FormSchema>>; id?: string; onsuccess?: () => void} = $props();
+		onsuccess,
+		recaptchaSiteKey
+	}: {
+		data: SuperValidated<Infer<FormSchema>>;
+		id?: string;
+		onsuccess?: () => void;
+		recaptchaSiteKey: string;
+	} = $props();
 
 	let isSuccess = $state(false);
 
 	const form = superForm(data, {
 		validators: zod4Client(formSchema),
 		id,
+		onSubmit: async ({formData, cancel}) => {
+			try {
+				// @ts-ignore
+				const token = await grecaptcha.execute(recaptchaSiteKey, {action: 'submit'});
+				formData.set('token', token);
+			} catch (error) {
+				console.error('Recaptcha error:', error);
+				cancel();
+			}
+		},
 		onResult: ({result}) => {
 			if (result.type === 'success') {
 				isSuccess = true;
