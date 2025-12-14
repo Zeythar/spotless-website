@@ -12,7 +12,8 @@ export const footerData: FooterData = {
 				{label: 'Varför oss', href: '/varfor-oss'},
 				{label: 'Priser', href: '/priser'},
 				{label: 'Städguide', href: '/stadguide'},
-				{label: 'Frågor & Svar', href: '/fragor-och-svar'}
+				{label: 'Frågor & Svar', href: '/fragor-och-svar'},
+				{label: 'Integritetspolicy', href: '/integritetspolicy'}
 			]
 		},
 		services: {

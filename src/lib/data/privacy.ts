@@ -28,6 +28,15 @@ export const privacyData = {
 				duration: '6 månader',
 				privacyLink: 'Google Privacy Policy',
 				privacyUrl: 'https://policies.google.com/privacy'
+			},
+			vercelBot: {
+				title: 'Vercel Bot Protection',
+				purpose: 'Skyddar webbplatsen mot skadliga bottar och automatiserade attacker',
+				provider: 'Vercel Inc.',
+				cookies: 'botid-header, vercel-bot-score',
+				duration: 'Sessionsbaserad',
+				privacyLink: 'Vercel Privacy Policy',
+				privacyUrl: 'https://vercel.com/legal/privacy-policy'
 			}
 		},
 		analytics: {
@@ -60,7 +69,7 @@ export const privacyData = {
 	dataPrivacy: {
 		title: 'Datasäkerhet och integritet',
 		p1: 'Vi samlar aldrig in personligt identifierbar information (PII) genom cookies utan ditt samtycke. All data som samlas in genom analyscookies är anonym och används endast för att förbättra webbplatsen.',
-		p2: 'Google reCAPTCHA kan samla in viss teknisk information (som IP-adress och webbläsardata) för att bedöma om en användare är en människa eller en bot. Denna information behandlas enligt Googles integritetspolicy.'
+		p2: 'Säkerhetstjänster som Google reCAPTCHA och Vercel Bot Protection kan samla in viss teknisk information (som IP-adress, webbläsardata och interaktionsmönster) för att bedöma om en användare är en människa eller en bot. Denna information behandlas strikt för säkerhetsändamål.'
 	},
 	contact: {
 		title: 'Kontakta oss',
@@ -73,12 +82,12 @@ export const privacyData = {
 	banner: {
 		title: 'Vi använder cookies',
 		description:
-			'Vi använder nödvändiga cookies för att säkerställa att vårt formulär fungerar korrekt och skydda mot spam (Google reCAPTCHA v3). Vi vill också använda Google Analytics för att förbättra din upplevelse. Du kan välja vilka cookies du accepterar.',
+			'Vi använder nödvändiga cookies och säkerhetsteknik för att skydda webbplatsen och säkerställa att vårt formulär fungerar korrekt. Vi vill också använda Google Analytics för att förbättra din upplevelse. Du kan välja vilka cookies du accepterar.',
 		settingsTitle: 'Cookie-inställningar',
 		essentialTitle: 'Nödvändiga cookies',
 		essentialBadge: 'Alltid aktiv',
 		essentialDesc:
-			'Google reCAPTCHA v3 används för att skydda vårt kontaktformulär mot spam och automatiserade bottar. Vi sparar även dina cookie-inställningar. Dessa cookies är nödvändiga för att webbplatsen ska fungera.',
+			'Dessa cookies och tekniker (Google reCAPTCHA, Vercel Bot Protection) är nödvändiga för att skydda webbplatsen mot spam och attacker samt för att spara dina inställningar. De kan inte stängas av.',
 		analyticsTitle: 'Analyscookies',
 		analyticsDesc:
 			'Google Analytics hjälper oss förstå hur besökare använder vår webbplats så att vi kan förbättra den. Dessa cookies samlar in anonym information om sidvisningar och användarinteraktioner.',
