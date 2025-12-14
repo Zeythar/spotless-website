@@ -1,8 +1,11 @@
 <script lang="ts">
-	import {onMount} from 'svelte';
-	import {X} from '@lucide/svelte';
-	import {fade, fly} from 'svelte/transition';
+	import {browser} from '$app/environment';
+	import {afterNavigate} from '$app/navigation';
+	import {page} from '$app/stores';
 	import {privacyData} from '$lib/data/privacy';
+	import {X} from '@lucide/svelte';
+	import {onMount} from 'svelte';
+	import {fade, fly} from 'svelte/transition';
 
 	let isVisible = $state(false);
 	let showSettings = $state(false);
@@ -15,16 +18,19 @@
 		}
 	}
 
-	function initializeConsentMode() {
-		if (typeof window === 'undefined') return;
-
-		// 1. Set Default Consent (Denied)
+	if (browser) {
+		(window as any).gtag = gtag;
+		// 1. Set Default Consent (Denied) - Must be first
 		gtag('consent', 'default', {
 			ad_storage: 'denied',
 			ad_user_data: 'denied',
 			ad_personalization: 'denied',
 			analytics_storage: 'denied'
 		});
+	}
+
+	function initializeConsentMode() {
+		if (!browser) return;
 
 		// 2. Load Script (if not present)
 		if (!document.getElementById('ga-script')) {
@@ -34,11 +40,19 @@
 			script.id = 'ga-script';
 			document.head.appendChild(script);
 
-			// 3. Config
+			// 3. Initialize JS
 			gtag('js', new Date());
-			gtag('config', 'G-32Y4BXHR32');
 		}
 	}
+
+	// Track page views on navigation
+	afterNavigate(() => {
+		if (browser) {
+			gtag('config', 'G-32Y4BXHR32', {
+				page_path: $page.url.pathname
+			});
+		}
+	});
 
 	function updateConsent(granted: boolean) {
 		const status = granted ? 'granted' : 'denied';
