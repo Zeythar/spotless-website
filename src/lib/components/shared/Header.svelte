@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Hamburger from '$lib/components/ui/hamburger/hamburger.svelte';
 	import {
 		NavigationMenuContent,
 		NavigationMenuItem,
@@ -8,12 +9,12 @@
 		NavigationMenuTrigger
 	} from '$lib/components/ui/navigation-menu/index.js';
 	import {navigationMenuTriggerStyle} from '$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte';
-	import {Building, House, Info, Settings, SprayCan} from '@lucide/svelte';
-	import {Button} from '../ui/button';
-	import Logo from './Logo.svelte';
 	import {navigationData} from '$lib/data/navigation';
 	import {contactState} from '$lib/state/contact.svelte';
-	import Hamburger from '$lib/components/ui/hamburger/hamburger.svelte';
+	import {Building, House, Settings, SprayCan} from '@lucide/svelte';
+	import {Button} from '../ui/button';
+	import Logo from './Logo.svelte';
+	import MobileNav from './MobileNav.svelte';
 
 	let {mobileNavOpen = $bindable(false)} = $props();
 
@@ -99,46 +100,6 @@
 			/>
 		</div>
 	</div>
-
-	{#if mobileNavOpen}
-		<div class="absolute top-full left-0 w-full border-b bg-white p-4 shadow-lg md:hidden">
-			<nav class="flex flex-col gap-4">
-				{#each navigationData.links as link}
-					{#if link.dropdown}
-						<div class="flex flex-col gap-2">
-							<span class="font-semibold">{link.label}</span>
-							<div class="ml-4 flex flex-col gap-2">
-								{#each link.dropdown as item}
-									<a
-										href={item.href}
-										class="text-muted-foreground hover:text-foreground"
-										onclick={() => (mobileNavOpen = false)}
-									>
-										{item.title}
-									</a>
-								{/each}
-							</div>
-						</div>
-					{:else}
-						<a
-							href={link.href}
-							class="font-semibold hover:text-brand-primary"
-							onclick={() => (mobileNavOpen = false)}
-						>
-							{link.label}
-						</a>
-					{/if}
-				{/each}
-				<Button
-					class="w-full bg-linear-to-r from-brand-primary to-brand-secondary text-white"
-					onclick={() => {
-						contactState.isOpen = true;
-						mobileNavOpen = false;
-					}}
-				>
-					{navigationData.cta.label}
-				</Button>
-			</nav>
-		</div>
-	{/if}
 </header>
+
+<MobileNav bind:open={mobileNavOpen} />

@@ -20,7 +20,9 @@
 </script>
 
 <Header />
-{@render children()}
+<main class="flex-1">
+	{@render children()}
+</main>
 <Footer />
 <FloatingActions />
 <CookieBanner />

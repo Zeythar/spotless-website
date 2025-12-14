@@ -1,19 +1,19 @@
 <script lang="ts">
-	import {
-		Shield,
-		Award,
-		Users,
-		Clock,
-		Leaf,
-		TrendingUp,
-		Heart,
-		CheckCircle2,
-		Star,
-		Zap
-	} from '@lucide/svelte';
 	import {Card, CardContent, CardHeader, CardTitle} from '$lib/components/ui/card/';
 	import {Image} from '$lib/components/ui/image';
 	import {whyChooseUsData} from '$lib/data/why-choose-us';
+	import {
+		Award,
+		CheckCircle2,
+		Clock,
+		Heart,
+		Leaf,
+		Shield,
+		Star,
+		TrendingUp,
+		Users,
+		Zap
+	} from '@lucide/svelte';
 
 	const iconMap = {
 		Shield,
@@ -88,9 +88,17 @@
 		</div>
 
 		<!-- Certifications and Image Section -->
-		<div class="grid items-center gap-12 lg:grid-cols-2">
+		<section
+			class="grid items-center gap-12 lg:grid-cols-2"
+			aria-labelledby="certifications-heading"
+		>
 			<div>
-				<h3 class="mb-6 text-2xl font-medium">{whyChooseUsData.certifications.title}</h3>
+				<h3
+					id="certifications-heading"
+					class="mb-6 text-2xl font-medium"
+				>
+					{whyChooseUsData.certifications.title}
+				</h3>
 				<p class="mb-6 text-muted-foreground">
 					{whyChooseUsData.certifications.description}
 				</p>
@@ -115,7 +123,7 @@
 					/>
 				</div>
 			</div>
-		</div>
+		</section>
 
 		<!-- Testimonial Section -->
 		<div class="mt-16">

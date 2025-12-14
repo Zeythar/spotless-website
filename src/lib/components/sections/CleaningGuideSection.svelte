@@ -2,14 +2,14 @@
 	import {Badge} from '$lib/components/ui/badge';
 	import {
 		Card,
-		CardHeader,
-		CardTitle,
 		CardContent,
-		CardDescription
+		CardDescription,
+		CardHeader,
+		CardTitle
 	} from '$lib/components/ui/card';
 	import {Image} from '$lib/components/ui/image';
-	import {Lightbulb, ChefHat, Bath, Calendar, Droplets, Sparkles} from '@lucide/svelte';
 	import {cleaningGuideData} from '$lib/data/cleaning-guide';
+	import {Bath, Calendar, ChefHat, Droplets, Lightbulb, Sparkles} from '@lucide/svelte';
 
 	const iconMap = {
 		Lightbulb,
@@ -38,10 +38,18 @@
 		</div>
 
 		<!-- Quick Tips -->
-		<div class="mb-16">
+		<section
+			class="mb-16"
+			aria-labelledby="quick-tips-heading"
+		>
 			<div class="mb-6 flex items-center gap-3">
 				<Lightbulb class="h-6 w-6 text-brand-secondary" />
-				<h3 class="text-2xl font-medium">{cleaningGuideData.quickTips.title}</h3>
+				<h3
+					id="quick-tips-heading"
+					class="text-2xl font-medium"
+				>
+					{cleaningGuideData.quickTips.title}
+				</h3>
 			</div>
 			<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 				{#each cleaningGuideData.quickTips.items as tip}
@@ -55,11 +63,17 @@
 					</Card>
 				{/each}
 			</div>
-		</div>
+		</section>
 
 		<!-- Room-specific Tips -->
-		<div class="mb-16">
-			<h3 class="mb-6 text-center text-2xl font-medium">
+		<section
+			class="mb-16"
+			aria-labelledby="room-tips-heading"
+		>
+			<h3
+				id="room-tips-heading"
+				class="mb-6 text-center text-2xl font-medium"
+			>
 				{cleaningGuideData.roomTips.title}
 			</h3>
 
@@ -144,7 +158,7 @@
 					</CardContent>
 				</Card>
 			</div>
-		</div>
+		</section>
 
 		<!-- Seasonal Cleaning -->
 		<div class="mb-16">

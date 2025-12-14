@@ -1,12 +1,12 @@
-import {fail} from '@sveltejs/kit';
-import {superValidate} from 'sveltekit-superforms';
-import {zod4} from 'sveltekit-superforms/adapters';
-import {formSchema} from '$lib/schema';
+import {MAILGUN_API_KEY, MAILGUN_DOMAIN} from '$env/static/private';
 import {contactData} from '$lib/data/contact';
+import {formSchema} from '$lib/schema';
 import type {RequestEvent} from '@sveltejs/kit';
+import {fail} from '@sveltejs/kit';
 import FormData from 'form-data';
 import Mailgun from 'mailgun.js';
-import {MAILGUN_API_KEY, MAILGUN_DOMAIN} from '$env/static/private';
+import {superValidate} from 'sveltekit-superforms';
+import {zod4} from 'sveltekit-superforms/adapters';
 
 export const loadContactForm = async () => {
 	return {
@@ -180,9 +180,7 @@ ${message}
                     MEDDELANDE
                   </p>
                   <div style="background-color: #f8f9fa; padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb;">
-                    <p style="margin: 0; font-size: 15px; color: #374151; line-height: 1.6; white-space: pre-wrap;">
-                      ${message.replace(/\n/g, '<br>')}
-                    </p>
+                    <p style="margin: 0; font-size: 15px; color: #374151; line-height: 1.6; white-space: pre-wrap;">${message.replace(/\n/g, '<br>')}</p>
                   </div>
                 </td>
               </tr>
@@ -213,10 +211,10 @@ ${message}
       </p>
       <div style="border-top: 1px solid #374151; padding-top: 20px; margin-top: 20px;">
         <p style="margin: 0 0 8px 0; font-size: 13px; color: #9ca3af;">
-          070-245 17 90, 073-568 64 67
+          <a href="tel:0702451790" style="color: #9ca3af; text-decoration: none;">070-245 17 90</a>, <a href="tel:0735686467" style="color: #9ca3af; text-decoration: none;">073-568 64 67</a>
         </p>
         <p style="margin: 0; font-size: 13px; color: #9ca3af;">
-          info@spotlessnorrland.se
+          <a href="mailto:info@spotlessnorrland.se" style="color: #9ca3af; text-decoration: none;">info@spotlessnorrland.se</a>
         </p>
       </div>
     </div>

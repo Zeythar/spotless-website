@@ -5,7 +5,7 @@
 		ref = $bindable(null),
 		value = $bindable(),
 		...restProps
-	}: AccordionPrimitive.RootProps = $props();
+	}: AccordionPrimitive.RootProps & {collapsible?: boolean} = $props();
 </script>
 
 <AccordionPrimitive.Root

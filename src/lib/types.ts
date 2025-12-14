@@ -9,9 +9,11 @@ export interface Link {
 	icon?: string;
 }
 
-export interface DropdownLink extends Link {
+export interface DropdownLink {
 	title: string;
 	description: string;
+	href: string;
+	icon?: string;
 }
 
 export interface NavigationItem {
