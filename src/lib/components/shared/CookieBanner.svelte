@@ -1,11 +1,11 @@
 <script lang="ts">
-	import {browser} from '$app/environment';
-	import {afterNavigate} from '$app/navigation';
-	import {page} from '$app/stores';
-	import {privacyData} from '$lib/data/privacy';
-	import {X} from '@lucide/svelte';
-	import {onMount} from 'svelte';
-	import {fade, fly} from 'svelte/transition';
+	import { browser } from '$app/environment';
+	import { afterNavigate } from '$app/navigation';
+	import { page } from '$app/stores';
+	import { privacyData } from '$lib/data/privacy';
+	import { X } from '@lucide/svelte';
+	import { onMount } from 'svelte';
+	import { fade, fly } from 'svelte/transition';
 
 	let isVisible = $state(false);
 	let showSettings = $state(false);
@@ -15,33 +15,6 @@
 		if (typeof window !== 'undefined') {
 			(window as any).dataLayer = (window as any).dataLayer || [];
 			(window as any).dataLayer.push(args);
-		}
-	}
-
-	if (browser) {
-		(window as any).gtag = gtag;
-		// 1. Set Default Consent (Denied) - Must be first
-		gtag('consent', 'default', {
-			ad_storage: 'denied',
-			ad_user_data: 'denied',
-			ad_personalization: 'denied',
-			analytics_storage: 'denied'
-		});
-	}
-
-	function initializeConsentMode() {
-		if (!browser) return;
-
-		// 2. Load Script (if not present)
-		if (!document.getElementById('ga-script')) {
-			const script = document.createElement('script');
-			script.async = true;
-			script.src = 'https://www.googletagmanager.com/gtag/js?id=G-32Y4BXHR32';
-			script.id = 'ga-script';
-			document.head.appendChild(script);
-
-			// 3. Initialize JS
-			gtag('js', new Date());
 		}
 	}
 
@@ -62,9 +35,6 @@
 	}
 
 	onMount(() => {
-		// Initialize with default denied
-		initializeConsentMode();
-
 		const consent = localStorage.getItem('cookie-consent');
 		if (!consent) {
 			isVisible = true;
