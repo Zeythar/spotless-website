@@ -22,7 +22,7 @@
 				<div class="flex flex-col gap-4 sm:flex-row">
 					<Button
 						size="lg"
-						class="bg-linear-to-r from-brand-primary to-brand-secondary text-white transition-opacity hover:opacity-90"
+						class="bg-linear-to-r from-brand-primary to-brand-secondary text-white transition-opacity hover:opacity-90 cursor-pointer"
 						onclick={() => (contactState.isOpen = true)}
 					>
 						{heroData.buttons.primary}

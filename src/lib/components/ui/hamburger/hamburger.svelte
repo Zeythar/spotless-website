@@ -6,7 +6,7 @@
 
 <button
 	class={cn(
-		'relative flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-md hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none',
+		'relative flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-1.5 rounded-md hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none',
 		className
 	)}
 	onclick={() => (open = !open)}
