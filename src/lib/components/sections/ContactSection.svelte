@@ -14,12 +14,10 @@
 
 	let {
 		data,
-		class: className,
-		recaptchaSiteKey
+		class: className
 	}: {
 		data: SuperValidated<Infer<FormSchema>>;
 		class?: string;
-		recaptchaSiteKey: string;
 	} = $props();
 
 	const iconMap = {
@@ -126,7 +124,6 @@
 					<ContactForm
 						{data}
 						id="contact-form-section"
-						{recaptchaSiteKey}
 					/>
 				</CardContent>
 			</Card>

@@ -26,13 +26,11 @@
 	let {
 		data,
 		id,
-		onsuccess,
-		recaptchaSiteKey
+		onsuccess
 	}: {
 		data: SuperValidated<Infer<FormSchema>>;
 		id?: string;
 		onsuccess?: () => void;
-		recaptchaSiteKey: string;
 	} = $props();
 
 	let isSuccess = $state(false);
@@ -40,16 +38,6 @@
 	const form = superForm(data, {
 		validators: zod4Client(formSchema),
 		id,
-		onSubmit: async ({formData, cancel}) => {
-			try {
-				// @ts-ignore
-				const token = await grecaptcha.execute(recaptchaSiteKey, {action: 'submit'});
-				formData.set('token', token);
-			} catch (error) {
-				console.error('Recaptcha error:', error);
-				cancel();
-			}
-		},
 		onResult: ({result}) => {
 			if (result.type === 'success') {
 				isSuccess = true;

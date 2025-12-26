@@ -6,8 +6,7 @@
 	import type {FormSchema} from '$lib/schema';
 	import type {Infer, SuperValidated} from 'sveltekit-superforms';
 
-	let {data}: {data: {form: SuperValidated<Infer<FormSchema>>; recaptchaSiteKey: string}} =
-		$props();
+	let {data}: {data: {form: SuperValidated<Infer<FormSchema>>}} = $props();
 </script>
 
 <svelte:head>
@@ -19,7 +18,4 @@
 </svelte:head>
 
 <WhyChooseUsSection />
-<ContactSection
-	data={data.form}
-	recaptchaSiteKey={data.recaptchaSiteKey}
-/>
+<ContactSection data={data.form} />

@@ -20,15 +20,6 @@ export const privacyData = {
 			badge: 'Alltid aktiv',
 			description:
 				'Dessa cookies är nödvändiga för att webbplatsen ska fungera korrekt och kan inte stängas av i våra system.',
-			recaptcha: {
-				title: 'Google reCAPTCHA v3',
-				purpose: 'Skyddar vårt kontaktformulär mot spam och automatiserade bottar',
-				provider: 'Google LLC',
-				cookies: '_GRECAPTCHA, rc::a, rc::b, rc::c',
-				duration: '6 månader',
-				privacyLink: 'Google Privacy Policy',
-				privacyUrl: 'https://policies.google.com/privacy'
-			},
 			vercelBot: {
 				title: 'Vercel Bot Protection',
 				purpose: 'Skyddar webbplatsen mot skadliga bottar och automatiserade attacker',
@@ -69,7 +60,7 @@ export const privacyData = {
 	dataPrivacy: {
 		title: 'Datasäkerhet och integritet',
 		p1: 'Vi samlar aldrig in personligt identifierbar information (PII) genom cookies utan ditt samtycke. All data som samlas in genom analyscookies är anonym och används endast för att förbättra webbplatsen.',
-		p2: 'Säkerhetstjänster som Google reCAPTCHA och Vercel Bot Protection kan samla in viss teknisk information (som IP-adress, webbläsardata och interaktionsmönster) för att bedöma om en användare är en människa eller en bot. Denna information behandlas strikt för säkerhetsändamål.'
+		p2: 'Säkerhetstjänster som Vercel Bot Protection kan samla in viss teknisk information (som IP-adress, webbläsardata och interaktionsmönster) för att bedöma om en användare är en människa eller en bot. Denna information behandlas strikt för säkerhetsändamål.'
 	},
 	contact: {
 		title: 'Kontakta oss',
@@ -87,7 +78,7 @@ export const privacyData = {
 		essentialTitle: 'Nödvändiga cookies',
 		essentialBadge: 'Alltid aktiv',
 		essentialDesc:
-			'Dessa cookies och tekniker (Google reCAPTCHA, Vercel Bot Protection) är nödvändiga för att skydda webbplatsen mot spam och attacker samt för att spara dina inställningar. De kan inte stängas av.',
+			'Dessa cookies och tekniker (Vercel Bot Protection) är nödvändiga för att skydda webbplatsen mot spam och attacker samt för att spara dina inställningar. De kan inte stängas av.',
 		analyticsTitle: 'Analyscookies',
 		analyticsDesc:
 			'Google Analytics hjälper oss förstå hur besökare använder vår webbplats så att vi kan förbättra den. Dessa cookies samlar in anonym information om sidvisningar och användarinteraktioner.',

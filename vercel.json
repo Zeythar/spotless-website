@@ -19,5 +19,27 @@
 				}
 			]
 		}
+	],
+	"redirects": [
+		{
+			"source": "/om-oss",
+			"destination": "/varfor-oss",
+			"permanent": true
+		},
+		{
+			"source": "/kontakta-oss",
+			"destination": "/",
+			"permanent": true
+		},
+		{
+			"source": "/ovriga-tjanster",
+			"destination": "/tjanster/service-och-ovrigt",
+			"permanent": true
+		},
+		{
+			"source": "/author/admin",
+			"destination": "/",
+			"permanent": true
+		}
 	]
 }

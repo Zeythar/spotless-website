@@ -21,8 +21,7 @@ export const formSchema = z.object({
 		.string()
 		.min(1, validationData.message.required)
 		.min(10, validationData.message.minLength),
-	confirmEmail: z.string().optional(),
-	token: z.string().optional()
+	confirmEmail: z.string().optional()
 });
 
 export type FormSchema = typeof formSchema;

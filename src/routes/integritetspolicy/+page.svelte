@@ -1,7 +1,7 @@
 <script lang="ts">
-	import {Shield, Calendar, Cookie, BarChart3, Lock, Mail} from '@lucide/svelte';
 	import {privacyData} from '$lib/data/privacy';
 	import {seoData} from '$lib/data/seo';
+	import {BarChart3, Calendar, Cookie, Lock, Mail, Shield} from '@lucide/svelte';
 </script>
 
 <svelte:head>
@@ -100,34 +100,34 @@
 
 						<div class="rounded-lg bg-muted/30 p-4">
 							<h4 class="mb-3 font-medium">
-								{privacyData.cookiesWeUse.essential.recaptcha.title}
+								{privacyData.cookiesWeUse.essential.vercelBot.title}
 							</h4>
 							<div class="space-y-2 text-sm text-muted-foreground">
 								<div class="flex gap-2">
 									<span class="font-medium text-foreground">Syfte:</span>
 									<span
-										>{privacyData.cookiesWeUse.essential.recaptcha
+										>{privacyData.cookiesWeUse.essential.vercelBot
 											.purpose}</span
 									>
 								</div>
 								<div class="flex gap-2">
 									<span class="font-medium text-foreground">Leverantör:</span>
 									<span
-										>{privacyData.cookiesWeUse.essential.recaptcha
+										>{privacyData.cookiesWeUse.essential.vercelBot
 											.provider}</span
 									>
 								</div>
 								<div class="flex gap-2">
 									<span class="font-medium text-foreground">Cookies:</span>
 									<span
-										>{privacyData.cookiesWeUse.essential.recaptcha
+										>{privacyData.cookiesWeUse.essential.vercelBot
 											.cookies}</span
 									>
 								</div>
 								<div class="flex gap-2">
 									<span class="font-medium text-foreground">Varaktighet:</span>
 									<span
-										>{privacyData.cookiesWeUse.essential.recaptcha
+										>{privacyData.cookiesWeUse.essential.vercelBot
 											.duration}</span
 									>
 								</div>
@@ -135,13 +135,13 @@
 									<span class="font-medium text-foreground">Mer information:</span
 									>
 									<a
-										href={privacyData.cookiesWeUse.essential.recaptcha
+										href={privacyData.cookiesWeUse.essential.vercelBot
 											.privacyUrl}
 										target="_blank"
 										rel="noopener noreferrer"
 										class="text-brand-primary hover:underline"
 									>
-										{privacyData.cookiesWeUse.essential.recaptcha.privacyLink}
+										{privacyData.cookiesWeUse.essential.vercelBot.privacyLink}
 									</a>
 								</div>
 							</div>

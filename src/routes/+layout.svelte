@@ -15,12 +15,10 @@
 	import type {LayoutData} from './$types';
 	import './layout.css';
 
-	let {children, data}: {children: any; data: LayoutData & {recaptchaSiteKey: string}} = $props();
+	let {children, data}: {children: any; data: LayoutData} = $props();
 </script>
 
-<svelte:head>
-	<script src="https://www.google.com/recaptcha/api.js?render={data.recaptchaSiteKey}"></script>
-</svelte:head>
+<svelte:head></svelte:head>
 
 <Header />
 <main class="flex-1">
@@ -39,7 +37,6 @@
 			data={data.form}
 			id="contact-form-dialog"
 			onsuccess={() => (contactState.isOpen = false)}
-			recaptchaSiteKey={data.recaptchaSiteKey}
 		/>
 	</DialogContent>
 </Dialog>
