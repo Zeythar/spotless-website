@@ -1,16 +1,14 @@
 <script lang="ts">
+	import Seo from '$lib/components/shared/Seo.svelte';
 	import {privacyData} from '$lib/data/privacy';
 	import {seoData} from '$lib/data/seo';
 	import {BarChart3, Calendar, Cookie, Lock, Mail, Shield} from '@lucide/svelte';
 </script>
 
-<svelte:head>
-	<title>{seoData.privacy.title}</title>
-	<meta
-		name="description"
-		content={seoData.privacy.description}
-	/>
-</svelte:head>
+<Seo
+	title={seoData.privacy.title}
+	description={seoData.privacy.description}
+/>
 
 <!-- Hero Section -->
 <section

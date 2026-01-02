@@ -23,11 +23,7 @@
 	import {type Infer, superForm, type SuperValidated} from 'sveltekit-superforms';
 	import {zod4Client} from 'sveltekit-superforms/adapters';
 
-	let {
-		data,
-		id,
-		onsuccess
-	}: {
+	let props: {
 		data: SuperValidated<Infer<FormSchema>>;
 		id?: string;
 		onsuccess?: () => void;
@@ -35,14 +31,14 @@
 
 	let isSuccess = $state(false);
 
-	const form = superForm(data, {
+	const form = superForm(props.data, {
 		validators: zod4Client(formSchema),
-		id,
+		id: props.id,
 		onResult: ({result}) => {
 			if (result.type === 'success') {
 				isSuccess = true;
 				setTimeout(() => {
-					onsuccess?.();
+					props.onsuccess?.();
 					isSuccess = false;
 				}, 2000);
 			}
@@ -172,7 +168,7 @@
 
 		<!-- Honeypot field - hidden from users but visible to bots -->
 		<div
-			class="absolute top-[-9999px] left-[-9999px] opacity-0"
+			class="sr-only"
 			aria-hidden="true"
 		>
 			<label for="confirmEmail">Bekräfta e-post</label>

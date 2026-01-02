@@ -43,7 +43,7 @@
 									>{link.label}</NavigationMenuTrigger
 								>
 								<NavigationMenuContent>
-									<ul class="grid w-[380px] gap-4 p-2">
+									<ul class="grid w-95 gap-4 p-2">
 										<li>
 											{#each link.dropdown as item}
 												{@const Icon =

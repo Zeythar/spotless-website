@@ -1,7 +1,8 @@
 <script lang="ts">
 	import ServiceSection from '$lib/components/sections/ServiceSection.svelte';
-	import {serviceCategories} from '$lib/data/services';
+	import Seo from '$lib/components/shared/Seo.svelte';
 	import {seoData} from '$lib/data/seo';
+	import {serviceCategories} from '$lib/data/services';
 	import {contactState} from '$lib/state/contact.svelte';
 
 	$effect(() => {
@@ -9,12 +10,9 @@
 	});
 </script>
 
-<svelte:head>
-	<title>{seoData.servicesHem.title}</title>
-	<meta
-		name="description"
-		content={seoData.servicesHem.description}
-	/>
-</svelte:head>
+<Seo
+	title={seoData.servicesHem.title}
+	description={seoData.servicesHem.description}
+/>
 
 <ServiceSection category={serviceCategories.hem} />
