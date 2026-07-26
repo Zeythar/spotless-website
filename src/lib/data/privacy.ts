@@ -67,8 +67,8 @@ export const privacyData = {
 		description:
 			'Om du har några frågor om vår användning av cookies eller integritetspolicy, vänligen kontakta oss:',
 		email: 'info@spotlessnorrland.se',
-		phone: '070-245 17 90',
-		phoneLink: '070-2451790'
+		phone: '076-207 38 73',
+		phoneLink: '0762073873'
 	},
 	banner: {
 		title: 'Vi använder cookies',

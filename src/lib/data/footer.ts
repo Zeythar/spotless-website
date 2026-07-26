@@ -30,8 +30,8 @@ export const footerData: FooterData = {
 		},
 		contact: {
 			title: 'Kontakt',
-			phone: '070-245 17 90',
-			phoneLink: 'tel:0702451790',
+			phone: '076-207 38 73',
+			phoneLink: 'tel:0762073873',
 			email: 'info@spotlessnorrland.se',
 			emailLink: 'mailto:info@spotlessnorrland.se',
 			social: [
