@@ -8,8 +8,13 @@
 		CardTitle
 	} from '$lib/components/ui/card';
 	import {Image} from '$lib/components/ui/image';
+	import Bath from '@lucide/svelte/icons/bath';
+	import Calendar from '@lucide/svelte/icons/calendar';
+	import ChefHat from '@lucide/svelte/icons/chef-hat';
+	import Droplets from '@lucide/svelte/icons/droplets';
+	import Lightbulb from '@lucide/svelte/icons/lightbulb';
+	import Sparkles from '@lucide/svelte/icons/sparkles';
 	import {cleaningGuideData} from '$lib/data/cleaning-guide';
-	import {Bath, Calendar, ChefHat, Droplets, Lightbulb, Sparkles} from '@lucide/svelte';
 
 	const iconMap = {
 		Lightbulb,
@@ -88,6 +93,8 @@
 							alt={cleaningGuideData.roomTips.kitchen.image.alt}
 							class="h-full w-full"
 							imgClass="transition-transform duration-300 group-hover:scale-105"
+							loading="lazy"
+							decoding="async"
 						/>
 						<div class="absolute top-4 right-4">
 							<Badge class="border-0 bg-brand-secondary text-white">
@@ -128,6 +135,8 @@
 							alt={cleaningGuideData.roomTips.bathroom.image.alt}
 							class="h-full w-full"
 							imgClass="transition-transform duration-300 group-hover:scale-105"
+							loading="lazy"
+							decoding="async"
 						/>
 						<div class="absolute top-4 right-4">
 							<Badge class="border-0 bg-brand-secondary text-white">
@@ -236,7 +245,7 @@
 				</CardHeader>
 				<CardContent>
 					<button
-						class="cursor-pointer rounded-lg bg-white px-6 py-3 text-brand-primary transition-colors hover:bg-white/90"
+						class="cursor-pointer rounded-lg bg-white px-6 py-3 font-semibold text-brand-primary transition-colors select-none hover:bg-white/90"
 						on:click={scrollToContact}
 					>
 						{cleaningGuideData.cta.buttonText}

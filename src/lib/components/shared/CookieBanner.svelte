@@ -3,52 +3,80 @@
 	import {afterNavigate} from '$app/navigation';
 	import {page} from '$app/stores';
 	import {privacyData} from '$lib/data/privacy';
-	import {X} from '@lucide/svelte';
+	import X from '@lucide/svelte/icons/x';
 	import {onMount} from 'svelte';
 	import {fade, fly} from 'svelte/transition';
+
+	const GA_ID = 'G-32Y4BXHR32';
 
 	let isVisible = $state(false);
 	let showSettings = $state(false);
 	let analyticsEnabled = $state(false);
+	let gaLoaded = $state(false);
 
-	function gtag(...args: any[]) {
-		if (typeof window !== 'undefined') {
-			(window as any).dataLayer = (window as any).dataLayer || [];
-			(window as any).dataLayer.push(args);
-		}
+	function gtag(...args: unknown[]) {
+		if (!browser) return;
+		const win = window as Window & {dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void};
+		win.dataLayer = win.dataLayer || [];
+		win.dataLayer.push(args);
 	}
 
-	// Track page views on navigation
+	function loadGoogleAnalytics() {
+		if (!browser || gaLoaded) return;
+		gaLoaded = true;
+
+		const win = window as Window & {dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void};
+		win.dataLayer = win.dataLayer || [];
+		win.gtag = function gtag(...args: unknown[]) {
+			win.dataLayer!.push(args);
+		};
+
+		win.gtag('js', new Date());
+		win.gtag('config', GA_ID);
+
+		const script = document.createElement('script');
+		script.async = true;
+		script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+		document.head.appendChild(script);
+	}
+
+	function enableAnalytics() {
+		analyticsEnabled = true;
+		loadGoogleAnalytics();
+		gtag('consent', 'update', {
+			analytics_storage: 'granted'
+		});
+	}
+
+	function disableAnalytics() {
+		analyticsEnabled = false;
+		gtag('consent', 'update', {
+			analytics_storage: 'denied'
+		});
+	}
+
 	afterNavigate(() => {
-		if (browser) {
+		if (browser && analyticsEnabled && gaLoaded) {
 			gtag('event', 'page_view', {
 				page_path: $page.url.pathname
 			});
 		}
 	});
 
-	function updateConsent(granted: boolean) {
-		const status = granted ? 'granted' : 'denied';
-		gtag('consent', 'update', {
-			analytics_storage: status
-		});
-	}
-
 	onMount(() => {
 		const consent = localStorage.getItem('cookie-consent');
 		if (!consent) {
 			isVisible = true;
-		} else {
-			try {
-				const parsed = JSON.parse(consent);
-				if (parsed.analytics) {
-					analyticsEnabled = true;
-					updateConsent(true);
-				}
-			} catch (e) {
-				// Invalid JSON, show banner
-				isVisible = true;
+			return;
+		}
+
+		try {
+			const parsed = JSON.parse(consent);
+			if (parsed.analytics) {
+				enableAnalytics();
 			}
+		} catch {
+			isVisible = true;
 		}
 	});
 
@@ -61,7 +89,7 @@
 				timestamp: new Date().toISOString()
 			})
 		);
-		updateConsent(true);
+		enableAnalytics();
 		isVisible = false;
 	};
 
@@ -74,7 +102,7 @@
 				timestamp: new Date().toISOString()
 			})
 		);
-		updateConsent(false);
+		disableAnalytics();
 		isVisible = false;
 	};
 
@@ -87,7 +115,11 @@
 				timestamp: new Date().toISOString()
 			})
 		);
-		updateConsent(analyticsEnabled);
+		if (analyticsEnabled) {
+			enableAnalytics();
+		} else {
+			disableAnalytics();
+		}
 		isVisible = false;
 	};
 </script>
@@ -111,7 +143,7 @@
 								</div>
 								<button
 									onclick={() => (isVisible = false)}
-									class="shrink-0 cursor-pointer rounded-md p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+									class="shrink-0 cursor-pointer rounded-md p-2 text-muted-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground"
 									aria-label="Stäng"
 								>
 									<X class="h-4 w-4" />
@@ -131,19 +163,19 @@
 								<div class="flex flex-col gap-2 sm:flex-row">
 									<button
 										onclick={() => (showSettings = true)}
-										class="inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium whitespace-nowrap shadow-xs transition-all outline-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+										class="inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-semibold whitespace-nowrap shadow-xs transition-all outline-none select-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
 									>
 										{privacyData.banner.buttons.customize}
 									</button>
 									<button
 										onclick={handleRejectOptional}
-										class="inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium whitespace-nowrap shadow-xs transition-all outline-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+										class="inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-semibold whitespace-nowrap shadow-xs transition-all outline-none select-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
 									>
 										{privacyData.banner.buttons.essential}
 									</button>
 									<button
 										onclick={handleAcceptAll}
-										class="inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md bg-linear-to-r from-brand-primary to-brand-secondary px-4 py-2 text-sm font-medium whitespace-nowrap text-white shadow-xs transition-opacity outline-none hover:opacity-90 focus-visible:ring-[3px] focus-visible:ring-ring/50"
+										class="inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md bg-linear-to-r from-brand-primary to-brand-secondary px-4 py-2 text-sm font-semibold whitespace-nowrap text-white shadow-xs transition-opacity outline-none select-none hover:opacity-90 focus-visible:ring-[3px] focus-visible:ring-ring/50"
 									>
 										{privacyData.banner.buttons.accept}
 									</button>
@@ -156,7 +188,7 @@
 								<h3 class="font-semibold">{privacyData.banner.settingsTitle}</h3>
 								<button
 									onclick={() => (showSettings = false)}
-									class="shrink-0 rounded-md p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+									class="shrink-0 cursor-pointer rounded-md p-2 text-muted-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground"
 									aria-label="Tillbaka"
 								>
 									<X class="h-4 w-4" />
@@ -209,20 +241,20 @@
 												aria-label="Analyscookies"
 												onclick={() =>
 													(analyticsEnabled = !analyticsEnabled)}
-												class={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none ${
-													analyticsEnabled
-														? 'bg-linear-to-r from-brand-primary to-brand-secondary'
-														: 'bg-input'
-												}`}
+												class="relative inline-flex h-6 w-11 cursor-pointer items-center rounded-full bg-input select-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
 												role="switch"
 												aria-checked={analyticsEnabled}
 											>
 												<span
-													class={`inline-block h-4 w-4 transform rounded-full bg-white transition ${
-														analyticsEnabled
-															? 'translate-x-6'
-															: 'translate-x-1'
-													}`}
+													class="absolute inset-0 rounded-full bg-linear-to-r from-brand-primary to-brand-secondary transition-opacity duration-200 ease-out {analyticsEnabled
+														? 'opacity-100'
+														: 'opacity-0'}"
+													aria-hidden="true"
+												></span>
+												<span
+													class="relative ms-1 inline-block size-4 rounded-full bg-white shadow-sm transition-transform duration-200 ease-out {analyticsEnabled
+														? 'translate-x-5'
+														: 'translate-x-0'}"
 												></span>
 											</button>
 										</div>
@@ -233,13 +265,13 @@
 							<div class="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-end">
 								<button
 									onclick={() => (showSettings = false)}
-									class="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium whitespace-nowrap shadow-xs transition-all outline-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
+									class="inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-semibold whitespace-nowrap shadow-xs transition-all outline-none select-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
 								>
 									{privacyData.banner.buttons.cancel}
 								</button>
 								<button
 									onclick={handleSavePreferences}
-									class="inline-flex h-9 items-center justify-center gap-2 rounded-md bg-linear-to-r from-brand-primary to-brand-secondary px-4 py-2 text-sm font-medium whitespace-nowrap text-white shadow-xs transition-opacity outline-none hover:opacity-90 focus-visible:ring-[3px] focus-visible:ring-ring/50"
+									class="inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md bg-linear-to-r from-brand-primary to-brand-secondary px-4 py-2 text-sm font-semibold whitespace-nowrap text-white shadow-xs transition-opacity outline-none select-none hover:opacity-90 focus-visible:ring-[3px] focus-visible:ring-ring/50"
 								>
 									{privacyData.banner.buttons.save}
 								</button>

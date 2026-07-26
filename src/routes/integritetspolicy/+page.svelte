@@ -2,7 +2,12 @@
 	import Seo from '$lib/components/shared/Seo.svelte';
 	import {privacyData} from '$lib/data/privacy';
 	import {seoData} from '$lib/data/seo';
-	import {BarChart3, Calendar, Cookie, Lock, Mail, Shield} from '@lucide/svelte';
+	import BarChart3 from '@lucide/svelte/icons/bar-chart-3';
+	import Calendar from '@lucide/svelte/icons/calendar';
+	import Cookie from '@lucide/svelte/icons/cookie';
+	import Lock from '@lucide/svelte/icons/lock';
+	import Mail from '@lucide/svelte/icons/mail';
+	import Shield from '@lucide/svelte/icons/shield';
 </script>
 
 <Seo
@@ -243,7 +248,7 @@
 								localStorage.removeItem('cookie-consent');
 								window.location.reload();
 							}}
-							class="inline-flex h-10 cursor-pointer items-center justify-center gap-2 rounded-md bg-linear-to-r from-brand-primary to-brand-secondary px-6 text-sm font-medium whitespace-nowrap text-white shadow-xs transition-opacity outline-none hover:opacity-90 focus-visible:ring-[3px] focus-visible:ring-ring/50"
+							class="inline-flex h-10 cursor-pointer items-center justify-center gap-2 rounded-md bg-linear-to-r from-brand-primary to-brand-secondary px-6 text-sm font-semibold whitespace-nowrap text-white shadow-xs transition-opacity outline-none select-none hover:opacity-90 focus-visible:ring-[3px] focus-visible:ring-ring/50"
 						>
 							{privacyData.managingCookies.button}
 						</button>

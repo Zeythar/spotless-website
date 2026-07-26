@@ -7,7 +7,8 @@
 		CardDescription
 	} from '$lib/components/ui/card/';
 	import {Button} from '$lib/components/ui/button/';
-	import {CheckCircle2, ArrowLeft} from '@lucide/svelte';
+	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
+	import CircleCheck from '@lucide/svelte/icons/circle-check';
 	import {servicePageData} from '$lib/data/services';
 	import {contactState} from '$lib/state/contact.svelte';
 	import type {ServiceCategory} from '$lib/types';
@@ -66,7 +67,7 @@
 							<ul class="space-y-2">
 								{#each service.features as feature, idx (idx)}
 									<li class="flex items-center gap-2">
-										<CheckCircle2 class="h-5 w-5 shrink-0 text-brand-primary" />
+										<CircleCheck class="h-5 w-5 shrink-0 text-brand-primary" />
 										<span class="text-sm">{feature}</span>
 									</li>
 								{/each}
@@ -91,7 +92,7 @@
 							<div
 								class="shrink-0 rounded-lg bg-linear-to-br from-brand-primary/20 to-brand-secondary/20 p-2"
 							>
-								<CheckCircle2 class="h-5 w-5 text-brand-primary" />
+								<CircleCheck class="h-5 w-5 text-brand-primary" />
 							</div>
 							<p>{benefit}</p>
 						</div>

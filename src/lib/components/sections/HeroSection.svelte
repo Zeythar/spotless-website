@@ -5,6 +5,17 @@
 	import {contactState} from '$lib/state/contact.svelte';
 </script>
 
+<svelte:head>
+	<link
+		rel="preload"
+		as="image"
+		href={heroData.image.src}
+		imagesrcset={heroData.image.srcset}
+		imagesizes={heroData.image.sizes}
+		fetchpriority="high"
+	/>
+</svelte:head>
+
 <section
 	id="hero"
 	class="relative overflow-hidden bg-linear-to-br from-brand-primary/10 to-brand-secondary/10"
@@ -35,9 +46,13 @@
 				<div class="aspect-4/3 overflow-hidden rounded-2xl shadow-2xl">
 					<Image
 						src={heroData.image.src}
+						srcset={heroData.image.srcset}
+						sizes={heroData.image.sizes}
 						alt={heroData.image.alt}
 						class="h-full w-full object-cover"
 						fetchpriority="high"
+						loading="eager"
+						decoding="async"
 					/>
 				</div>
 				<!-- Decorative element -->

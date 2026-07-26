@@ -11,7 +11,10 @@
 	import {navigationMenuTriggerStyle} from '$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte';
 	import {navigationData} from '$lib/data/navigation';
 	import {contactState} from '$lib/state/contact.svelte';
-	import {Building, House, Settings, SprayCan} from '@lucide/svelte';
+	import Building from '@lucide/svelte/icons/building';
+	import House from '@lucide/svelte/icons/house';
+	import Settings from '@lucide/svelte/icons/settings';
+	import SprayCan from '@lucide/svelte/icons/spray-can';
 	import {Button} from '../ui/button';
 	import Logo from './Logo.svelte';
 	import MobileNav from './MobileNav.svelte';
@@ -34,7 +37,10 @@
 			</div>
 
 			<!-- Desktop Navigation -->
-			<NavigationMenuRoot class="hidden items-center gap-6 md:flex">
+			<NavigationMenuRoot
+				class="hidden items-center gap-6 md:flex"
+				viewport={false}
+			>
 				<NavigationMenuList class="gap-0">
 					{#each navigationData.links as link}
 						<NavigationMenuItem>

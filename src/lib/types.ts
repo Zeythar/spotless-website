@@ -1,6 +1,8 @@
 export interface Image {
 	src: string;
 	alt: string;
+	srcset?: string;
+	sizes?: string;
 }
 
 export interface Link {

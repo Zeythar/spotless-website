@@ -9,7 +9,16 @@ export const heroData: HeroData = {
 		secondary: 'Se våra tjänster'
 	},
 	image: {
-		src: '/images/home/site-hero.jpg',
+		src: '/images/home/site-hero-1920.jpg',
+		srcset: [
+			'/images/home/site-hero-480.jpg 480w',
+			'/images/home/site-hero-768.jpg 768w',
+			'/images/home/site-hero-1024.jpg 1024w',
+			'/images/home/site-hero-1440.jpg 1440w',
+			'/images/home/site-hero-1920.jpg 1920w',
+			'/images/home/site-hero-2560.jpg 2560w'
+		].join(', '),
+		sizes: '(max-width: 1024px) 100vw, 50vw',
 		alt: 'Professionell städtjänst'
 	}
 };
@@ -43,7 +52,7 @@ export const aboutData: AboutData = {
 		}
 	],
 	image: {
-		src: 'https://images.unsplash.com/photo-1745970347652-8f22f5d7d3ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbGVhbiUyMG1vZGVybiUyMG9mZmljZXxlbnwxfHx8fDE3NjM5MzkzOTZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+		src: '/images/home/office.jpg',
 		alt: 'Städat kontor'
 	}
 };

@@ -6,16 +6,11 @@
 		AccordionTrigger
 	} from '$lib/components/ui/accordion';
 	import {footerData} from '$lib/data/footer';
-	import {Facebook, Instagram, Linkedin, Mail, Phone} from '@lucide/svelte';
+	import Mail from '@lucide/svelte/icons/mail';
+	import Phone from '@lucide/svelte/icons/phone';
 	import Logo from './Logo.svelte';
 
 	const currentYear = new Date().getFullYear();
-
-	const iconMap = {
-		Facebook,
-		Instagram,
-		Linkedin
-	};
 </script>
 
 <footer class="bg-foreground text-gray-300">

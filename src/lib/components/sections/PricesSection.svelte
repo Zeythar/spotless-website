@@ -9,7 +9,8 @@
 		CardTitle
 	} from '$lib/components/ui/card/index.js';
 	import {Alert, AlertDescription} from '$lib/components/ui/alert/';
-	import {CheckCircle2, Info} from '@lucide/svelte';
+	import CircleCheck from '@lucide/svelte/icons/circle-check';
+	import Info from '@lucide/svelte/icons/info';
 	import {pricesData} from '$lib/data/prices';
 	import {contactState} from '$lib/state/contact.svelte';
 
@@ -59,7 +60,7 @@
 						<ul class="mb-6 space-y-3">
 							{#each tier.features as feature, idx (idx)}
 								<li class="flex items-center gap-2">
-									<CheckCircle2 class="h-5 w-5 shrink-0 text-brand-primary" />
+									<CircleCheck class="h-5 w-5 shrink-0 text-brand-primary" />
 									<span class="text-sm">{feature}</span>
 								</li>
 							{/each}
@@ -90,7 +91,7 @@
 					<div class="grid gap-2 sm:grid-cols-2">
 						{#each pricesData.rotInfo.list as info, index (index)}
 							<div class="flex items-center gap-2">
-								<CheckCircle2 class="h-4 w-4 shrink-0 text-brand-secondary" />
+								<CircleCheck class="h-4 w-4 shrink-0 text-brand-secondary" />
 								<span class="text-sm">{info}</span>
 							</div>
 						{/each}

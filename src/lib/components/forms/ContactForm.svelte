@@ -19,11 +19,15 @@
 	import {contactData} from '$lib/data/contact';
 	import {formSchema, type FormSchema} from '$lib/schema';
 	import {contactState} from '$lib/state/contact.svelte';
-	import {CheckCircle2} from '@lucide/svelte';
+	import CircleCheck from '@lucide/svelte/icons/circle-check';
 	import {type Infer, superForm, type SuperValidated} from 'sveltekit-superforms';
 	import {zod4Client} from 'sveltekit-superforms/adapters';
 
-	let props: {
+	let {
+		data,
+		id,
+		onsuccess
+	}: {
 		data: SuperValidated<Infer<FormSchema>>;
 		id?: string;
 		onsuccess?: () => void;
@@ -31,14 +35,17 @@
 
 	let isSuccess = $state(false);
 
-	const form = superForm(props.data, {
+	// Initial values are intentional — superForm owns subsequent form state.
+	// svelte-ignore state_referenced_locally
+	const form = superForm(data, {
 		validators: zod4Client(formSchema),
-		id: props.id,
+		// svelte-ignore state_referenced_locally
+		id,
 		onResult: ({result}) => {
 			if (result.type === 'success') {
 				isSuccess = true;
 				setTimeout(() => {
-					props.onsuccess?.();
+					onsuccess?.();
 					isSuccess = false;
 				}, 2000);
 			}
@@ -100,7 +107,7 @@
 
 {#if isSuccess}
 	<Alert class="border-green-200 bg-green-50 text-green-800">
-		<CheckCircle2 class="h-4 w-4 text-green-600" />
+		<CircleCheck class="h-4 w-4 text-green-600" />
 		<AlertTitle>{contactData.form.success.title}</AlertTitle>
 		<AlertDescription>
 			{contactData.form.success.description}
@@ -109,6 +116,7 @@
 {:else}
 	<form
 		method="POST"
+		action="/contact"
 		use:enhance
 		class="grid grid-cols-1 gap-4 md:grid-cols-2"
 	>

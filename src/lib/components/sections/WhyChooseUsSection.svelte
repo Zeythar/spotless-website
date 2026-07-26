@@ -2,18 +2,16 @@
 	import {Card, CardContent, CardHeader, CardTitle} from '$lib/components/ui/card/';
 	import {Image} from '$lib/components/ui/image';
 	import {whyChooseUsData} from '$lib/data/why-choose-us';
-	import {
-		Award,
-		CheckCircle2,
-		Clock,
-		Heart,
-		Leaf,
-		Shield,
-		Star,
-		TrendingUp,
-		Users,
-		Zap
-	} from '@lucide/svelte';
+	import Award from '@lucide/svelte/icons/award';
+	import CircleCheck from '@lucide/svelte/icons/circle-check';
+	import Clock from '@lucide/svelte/icons/clock';
+	import Heart from '@lucide/svelte/icons/heart';
+	import Leaf from '@lucide/svelte/icons/leaf';
+	import Shield from '@lucide/svelte/icons/shield';
+	import Star from '@lucide/svelte/icons/star';
+	import TrendingUp from '@lucide/svelte/icons/trending-up';
+	import Users from '@lucide/svelte/icons/users';
+	import Zap from '@lucide/svelte/icons/zap';
 
 	const iconMap = {
 		Shield,
@@ -23,7 +21,7 @@
 		Leaf,
 		TrendingUp,
 		Heart,
-		CheckCircle2,
+		CircleCheck,
 		Star,
 		Zap
 	};
@@ -106,7 +104,7 @@
 					{#each whyChooseUsData.certifications.list as cert}
 						<div class="flex items-center gap-3">
 							<div class="rounded bg-brand-primary/20 p-1">
-								<CheckCircle2 class="h-4 w-4 text-brand-primary" />
+								<CircleCheck class="h-4 w-4 text-brand-primary" />
 							</div>
 							<span class="text-sm">{cert}</span>
 						</div>
@@ -120,6 +118,8 @@
 						src={whyChooseUsData.certifications.image.src}
 						alt={whyChooseUsData.certifications.image.alt}
 						class="h-full w-full object-cover"
+						loading="lazy"
+						decoding="async"
 					/>
 				</div>
 			</div>

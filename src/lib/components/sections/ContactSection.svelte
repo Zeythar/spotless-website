@@ -4,7 +4,8 @@
 	import {contactData} from '$lib/data/contact';
 	import {type FormSchema} from '$lib/schema';
 	import {cn} from '$lib/utils';
-	import {Mail, Phone} from '@lucide/svelte';
+	import Mail from '@lucide/svelte/icons/mail';
+	import Phone from '@lucide/svelte/icons/phone';
 	import {type Infer, type SuperValidated} from 'sveltekit-superforms';
 	import CardContent from '../ui/card/card-content.svelte';
 	import CardDescription from '../ui/card/card-description.svelte';

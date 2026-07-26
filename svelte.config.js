@@ -10,7 +10,9 @@ const config = {
 	kit: {
 		// adapter-vercel creates a Vercel app
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
-		adapter: adapter()
+		adapter: adapter({
+			runtime: 'nodejs24.x'
+		})
 	}
 };
 

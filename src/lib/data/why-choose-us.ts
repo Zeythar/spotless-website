@@ -68,7 +68,7 @@ export const whyChooseUsData: WhyChooseUsData = {
 			category: 'home'
 		},
 		{
-			icon: 'CheckCircle2',
+			icon: 'CircleCheck',
 			title: 'Inga Bindningstider',
 			description:
 				'Flexibla avtal utan bindningstid. Vi vill att du stannar för att du är nöjd, inte för att du är bunden.',

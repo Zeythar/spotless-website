@@ -226,7 +226,7 @@ ${message}
       </p>
       <div style="border-top: 1px solid #374151; padding-top: 20px; margin-top: 20px;">
         <p style="margin: 0 0 8px 0; font-size: 13px; color: #9ca3af;">
-          <a href="tel:0702451790" style="color: #9ca3af; text-decoration: none;">070-245 17 90</a>, <a href="tel:0735686467" style="color: #9ca3af; text-decoration: none;">073-568 64 67</a>
+          <a href="tel:0702451790" style="color: #9ca3af; text-decoration: none;">070-245 17 90</a>
         </p>
         <p style="margin: 0; font-size: 13px; color: #9ca3af;">
           <a href="mailto:info@spotlessnorrland.se" style="color: #9ca3af; text-decoration: none;">info@spotlessnorrland.se</a>

@@ -6,7 +6,8 @@
 		AccordionTrigger
 	} from '$lib/components/ui/accordion';
 	import {Card, CardContent, CardHeader, CardTitle} from '$lib/components/ui/card';
-	import {Mail, Phone} from '@lucide/svelte';
+	import Mail from '@lucide/svelte/icons/mail';
+	import Phone from '@lucide/svelte/icons/phone';
 	import {faqData} from '$lib/data/faq';
 </script>
 

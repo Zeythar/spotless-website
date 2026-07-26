@@ -8,7 +8,9 @@
 	import {contactData} from '$lib/data/contact';
 	import {navigationData} from '$lib/data/navigation';
 	import {contactState} from '$lib/state/contact.svelte';
-	import {Mail, Phone, X} from '@lucide/svelte';
+	import Mail from '@lucide/svelte/icons/mail';
+	import Phone from '@lucide/svelte/icons/phone';
+	import X from '@lucide/svelte/icons/x';
 	import {fade, fly} from 'svelte/transition';
 
 	let {open = $bindable(false)} = $props();
@@ -45,7 +47,7 @@
 			<div class="flex items-center justify-end border-b border-gray-100 p-4">
 				<button
 					onclick={close}
-					class="cursor-pointer rounded-lg p-2 text-gray-500 transition-colors hover:bg-gray-100"
+					class="cursor-pointer rounded-lg p-2 text-gray-500 transition-colors select-none hover:bg-gray-100"
 					aria-label="Close menu"
 				>
 					<X class="h-6 w-6" />
@@ -127,7 +129,7 @@
 			<!-- CTA Button -->
 			<div class="border-t border-gray-200 bg-gray-50 p-4">
 				<button
-					class="w-full rounded-lg bg-linear-to-r from-brand-primary to-brand-secondary px-6 py-4 text-white shadow-sm transition-opacity hover:opacity-90"
+					class="w-full cursor-pointer rounded-lg bg-linear-to-r from-brand-primary to-brand-secondary px-6 py-4 font-semibold text-white shadow-sm transition-opacity select-none hover:opacity-90"
 					onclick={() => {
 						contactState.isOpen = true;
 						close();

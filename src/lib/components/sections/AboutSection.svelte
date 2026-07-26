@@ -1,5 +1,8 @@
 <script lang="ts">
-	import {Award, Clock, Shield, Users} from '@lucide/svelte';
+	import Award from '@lucide/svelte/icons/award';
+	import Clock from '@lucide/svelte/icons/clock';
+	import Shield from '@lucide/svelte/icons/shield';
+	import Users from '@lucide/svelte/icons/users';
 	import {Image} from '$lib/components/ui/image';
 	import {aboutData} from '$lib/data/home';
 
@@ -25,6 +28,8 @@
 							src={aboutData.image.src}
 							alt={aboutData.image.alt}
 							class="h-full w-full object-cover"
+							loading="lazy"
+							decoding="async"
 						/>
 					</div>
 					<!-- Decorative element -->
